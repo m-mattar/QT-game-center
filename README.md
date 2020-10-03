@@ -6,7 +6,7 @@ This repository contains the project for our university course EECE435L - Softwa
 Upon starting it, a user can login, signup, play as guest.
 After that, the user is redirected to the welcome page where he can check his highscores, his game logs and play new games.
 
-We hope you will like it!
+We hope you will like it! :)
 
 ### Ownership ###
 
