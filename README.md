@@ -1,13 +1,14 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
 ### What is this repository for? ###
+This repository contains the project for our university course EECE435L - Software tools lab
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+Upon starting it, a user can login, signup, play as guest.
+After that, the user is redirected to the welcome page where he can check his highscores, his game logs and play new games.
+
+We hope you will like it!
 
 ### How do I get set up? ###
 
 * Repo owner or admin: Maria Mattar and Hussein Jaber
+* Lab instructor: Nabil Makarem
