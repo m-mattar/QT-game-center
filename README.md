@@ -1,6 +1,7 @@
 # README #
 
-What is this repository for?
+### What is this repository for? ###
+
 This repository contains the project for our university course EECE435L - Software tools lab
 
 Upon starting it, a user can login, signup, and  play as guest.
