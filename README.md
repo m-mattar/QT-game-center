@@ -1,29 +1,14 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
 ### What is this repository for? ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This repository contains the game center project for our university course: EECE435L - Software tools Lab
 
-### How do I get set up? ###
+Upon starting it, a user can login, signup or play as a guest.
+Once the last step is over, a user can choose which game to play, as well as see his highscore and the log of his previous games.
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+### Ownership ###
 
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+* Repo owner or admin: Maria Mattar and Hussein Jaber
+* Lab Instructor: Nabil Makarem
