@@ -8,7 +8,7 @@ After that, the user is redirected to the welcome page where he can check his hi
 
 We hope you will like it!
 
-### How do I get set up? ###
+### Ownership ###
 
 * Repo owner or admin: Maria Mattar and Hussein Jaber
 * Lab instructor: Nabil Makarem
