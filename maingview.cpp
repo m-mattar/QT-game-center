@@ -32,6 +32,8 @@ void MainGView::connectButtons(){
 // gets called whenever switching to the login page is needed
 void MainGView::login(){
     signuppage->close();
+    loginpage->usernameLineEdit->setText("");
+    loginpage->passwordLineEdit->setText("");
     this->setScene(loginpage);
     this->show();
 }
