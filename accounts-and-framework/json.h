@@ -13,7 +13,7 @@ class Json{
 public:
     Json();
 
-    QString filePath = "/home/eece435l/Desktop/game-center-2-hus/game-center/JSON/users.json";
+    QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/users.json";
     Util util;
     QJsonDocument getJsonDocument();
     void appendToUserDocument(QJsonObject user);

@@ -88,7 +88,7 @@ void MainWindow::fixLabels(){
 */
 QString MainWindow::getJoke(){
     srand(time(NULL));
-    const QString filePath = "/home/eece435l/Desktop/game-center-2-hus/game-center/JSON/jokes.json";
+    const QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/jokes.json";
     QFile file(filePath);
     file.open(QIODevice::ReadOnly | QIODevice::Text);
     QJsonParseError jsonParseError;

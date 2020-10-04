@@ -26,6 +26,7 @@ WelcomeWindow::WelcomeWindow(QObject *parent) : QGraphicsScene(parent) {
     fixWidgets();
     fixLabels();
     fillScene();
+    checkBday();
     connectButtons();
 
 }
@@ -147,7 +148,16 @@ void WelcomeWindow::updateScores(){
 */
 void WelcomeWindow::checkBday(){
     QString date = (curUser != NULL) ? curUser->dateOfBirth : "0/0/0";
+    int pos=date.lastIndexOf(QChar('/'));
+    date.remove(pos, 5);
+
     QString curDate = QDate::currentDate().toString("dd/MM/yyyy");
+    int pos2 = curDate.lastIndexOf(QChar('/'));
+    curDate.remove(pos2, 5);
+    if(curDate[0] == '0') curDate.remove(0, 1);
+
+    qWarning() << curDate;
+    qWarning() << date;
     if(date == curDate) happyBirthday->setText("Our team wishes you a Happy Birthday!");
     if(happyBirthday->text() != "") this -> addWidget(happyBirthday);
 }
