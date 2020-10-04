@@ -156,9 +156,9 @@ void WelcomeWindow::checkBday(){
     curDate.remove(pos2, 5);
     if(curDate[0] == '0') curDate.remove(0, 1);
 
-    qWarning() << curDate;
-    qWarning() << date;
     if(date == curDate) happyBirthday->setText("Our team wishes you a Happy Birthday!");
+    else{happyBirthday -> setText("");}
+
     if(happyBirthday->text() != "") this -> addWidget(happyBirthday);
 }
 
