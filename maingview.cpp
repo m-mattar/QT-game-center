@@ -5,6 +5,7 @@ MainGView::MainGView(){
     signuppage = new SignupPage();
     mainwindow = new MainWindow();
     welcomewindow = new WelcomeWindow();
+    game1scene = new Game1scene();
 
     this->setScene(mainwindow);
     connectButtons();
@@ -23,9 +24,10 @@ void MainGView::connectButtons(){
     QObject::connect(loginpage->loginButton, SIGNAL(clicked(bool)), this, SLOT(gotoWelcomeWindow()));
 
     QObject::connect(welcomewindow->homeButton, SIGNAL(clicked(bool)), this, SLOT(gotoHome()));
-
     QObject::connect(welcomewindow->game1Button, SIGNAL(clicked(bool)), this, SLOT(playGame1()));
     QObject::connect(welcomewindow->game2Button, SIGNAL(clicked(bool)), this, SLOT(playGame2()));
+
+    QObject::connect(game1scene->homeButton, SIGNAL(clicked(bool)), this, SLOT(gotoHome()));
 }
 
 /*
@@ -74,7 +76,7 @@ void MainGView::gotoWelcomeWindow(){
         welcomewindow -> helloLabel->setText(QString("Hello " + loginpage->curUser->firstName+" "+loginpage->curUser->lastName+ "!"));
         welcomewindow -> checkBday();
         welcomewindow -> updateProfilePic();
-        welcomewindow->updateScores();
+        welcomewindow-> updateScores();
         this -> setScene(welcomewindow);
         this -> show();
     }
@@ -97,20 +99,24 @@ void MainGView::gotoHome(){
  gets called whenever switching to the welcome window as a guest is needed.
 */
 void MainGView::playAsGuest(){
-    welcomewindow -> curUser = NULL;
+    welcomewindow -> cleanPage();
     this -> setScene(welcomewindow);
     this -> show();
 }
 
 /*!
-    Redirects to Game1: Kill covid 19
+    - Redirects to Game1: Kill covid 19
+    - SLOT is connected only to welcome page
 */
 void MainGView:: playGame1(){
-
+    game1scene -> curUser = welcomewindow -> curUser;
+    this ->setScene(game1scene);
+    this ->show();
 }
 
 /*!
-    Redirects to Game2: Reversi
+    - Redirects to Game2: Reversi
+    - SLOT is connected only to welcome page
 */
 void MainGView:: playGame2() {
 

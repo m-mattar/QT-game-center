@@ -9,6 +9,8 @@
 #include "accounts-and-framework/mainwindow.h"
 #include "accounts-and-framework/welcomewindow.h"
 
+#include "game1-kill-covid-19/game1scene.h"
+
 /*
 This class acts as a switch between the other scene.
 */
@@ -22,6 +24,7 @@ public:
     SignupPage * signuppage;
     MainWindow * mainwindow;
     WelcomeWindow * welcomewindow;
+    Game1scene * game1scene;
 
     void connectButtons();
 

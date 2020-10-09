@@ -166,6 +166,7 @@ void WelcomeWindow::checkBday(){
     Cleans all widgets in order to prepare for another user to login/signup
 */
 void WelcomeWindow:: cleanPage(){
+    this->curUser = NULL;
     this->happyBirthday->setText("");
     this->helloLabel->setText("Hello Guest!");
     this->removeItem(profilePicture);

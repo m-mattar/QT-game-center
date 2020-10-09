@@ -11,6 +11,7 @@ SOURCES += \
     accounts-and-framework/util.cpp \
     accounts-and-framework/welcomewindow.cpp \
     game1-kill-covid-19/game1scene.cpp \
+    game1-kill-covid-19/rollingbg.cpp \
     main.cpp \
     maingview.cpp \
 
@@ -23,6 +24,7 @@ HEADERS += \
     accounts-and-framework/util.h \
     accounts-and-framework/welcomewindow.h \
     game1-kill-covid-19/game1scene.h \
+    game1-kill-covid-19/rollingbg.h \
     maingview.h \
 
 DISTFILES += \
