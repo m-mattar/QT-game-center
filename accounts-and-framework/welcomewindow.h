@@ -48,16 +48,13 @@ public:
     void fixWidgets();
     void fixLabels();
     void fillScene();
-    void connectButtons();
     void checkBday();
     void updateProfilePic();
     void updateScores();
+    void cleanPage();
 
 signals:
 
-public slots:
-    void playGame1();
-    void playGame2();
 };
 
 #endif // WELCOMEWINDOW_H

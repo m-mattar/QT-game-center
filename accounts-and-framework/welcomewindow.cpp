@@ -27,7 +27,6 @@ WelcomeWindow::WelcomeWindow(QObject *parent) : QGraphicsScene(parent) {
     fixLabels();
     fillScene();
     checkBday();
-    connectButtons();
 
 }
 
@@ -116,7 +115,7 @@ void WelcomeWindow:: fillScene(){
 }
 
 
-/*
+/*!
     Displays a user's scores to the scene for each corresponding game
 */
 void WelcomeWindow::updateScores(){
@@ -142,7 +141,7 @@ void WelcomeWindow::updateScores(){
     game2Scores->setText(res2);
 }
 
-/*
+/*!
     checks if its the current user's birthday.
     if so, displays a happy birthday message
 */
@@ -162,27 +161,15 @@ void WelcomeWindow::checkBday(){
     if(happyBirthday->text() != "") this -> addWidget(happyBirthday);
 }
 
-void WelcomeWindow:: connectButtons(){
-    QObject::connect(game1Button, SIGNAL(clicked(bool)), this, SLOT(playGame1()));
-    QObject::connect(game2Button, SIGNAL(clicked(bool)), this, SLOT(playGame2()));
-}
-
-
-/*
-///////////////////////////// SLOTS //////////////////////////
+/*!
+    Called when we need to go to the maingview
+    Cleans all widgets in order to prepare for another user to login/signup
 */
-
-/*
-    Redirects to Game1: Kill covid 19
-*/
-void WelcomeWindow:: playGame1(){
-
-}
-
-/*
-    Redirects to Game2: Reversi
-*/
-void WelcomeWindow:: playGame2() {
-
+void WelcomeWindow:: cleanPage(){
+    this->happyBirthday->setText("");
+    this->helloLabel->setText("Hello Guest!");
+    this->removeItem(profilePicture);
+    this->game1Scores->setText("Please Sign up/in to save your scores :)");
+    this->game2Scores->setText("Please Sign up/in to save your scores :)");
 }
 

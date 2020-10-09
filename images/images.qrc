@@ -1,8 +1,17 @@
 <RCC>
     <qresource prefix="/">
-        <file>main-background.jpg</file>
         <file>center-background.jpg</file>
         <file>game1icon.jpeg</file>
         <file>game2icon.jpeg</file>
+        <file>images.qrc</file>
+        <file>red-background.jpg</file>
+        <file>game1images/arrow.png</file>
+        <file>game1images/bright-lavender-background.jpg</file>
+        <file>game1images/syringe.png</file>
+        <file>game1images/vessel.png</file>
+        <file>game1images/virus-green.png</file>
+        <file>game1images/virus-pink.png</file>
+        <file>game1images/virus-purple.png</file>
+        <file>game1images/white-blood-cell.png</file>
     </qresource>
 </RCC>

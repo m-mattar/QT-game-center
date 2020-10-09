@@ -34,6 +34,8 @@ public slots:
     void gotoWelcomeWindow();
     void gotoHome();
     void playAsGuest();
+    void playGame1();
+    void playGame2();
 };
 
 #endif // MAINGVIEW_H

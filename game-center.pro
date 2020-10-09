@@ -10,6 +10,7 @@ SOURCES += \
     accounts-and-framework/user.cpp \
     accounts-and-framework/util.cpp \
     accounts-and-framework/welcomewindow.cpp \
+    game1-kill-covid-19/game1scene.cpp \
     main.cpp \
     maingview.cpp \
 
@@ -21,6 +22,7 @@ HEADERS += \
     accounts-and-framework/user.h \
     accounts-and-framework/util.h \
     accounts-and-framework/welcomewindow.h \
+    game1-kill-covid-19/game1scene.h \
     maingview.h \
 
 DISTFILES += \

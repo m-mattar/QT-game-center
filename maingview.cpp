@@ -23,13 +23,18 @@ void MainGView::connectButtons(){
     QObject::connect(loginpage->loginButton, SIGNAL(clicked(bool)), this, SLOT(gotoWelcomeWindow()));
 
     QObject::connect(welcomewindow->homeButton, SIGNAL(clicked(bool)), this, SLOT(gotoHome()));
+
+    QObject::connect(welcomewindow->game1Button, SIGNAL(clicked(bool)), this, SLOT(playGame1()));
+    QObject::connect(welcomewindow->game2Button, SIGNAL(clicked(bool)), this, SLOT(playGame2()));
 }
 
 /*
 //////////////////////SLOTS//////////////////////////////
 */
 
-// gets called whenever switching to the login page is needed
+/*!
+ * gets called whenever switching to the login page is needed
+*/
 void MainGView::login(){
     signuppage->close();
     loginpage->usernameLineEdit->setText("");
@@ -40,10 +45,11 @@ void MainGView::login(){
 
 // opens a widget form to let a new user signup
 void MainGView::signup(){
+      this->hide();
       signuppage->show();
 }
 
-/*
+/*!
  gets called whenever switching to the welcome window as a logged in/ signed up user is needed.
  The welcome window acts as a medium between the user and the games.
  From there he can choose which game to play, see his highscore, and the log of his last played games.
@@ -75,23 +81,19 @@ void MainGView::gotoWelcomeWindow(){
 }
 
 
-/*
+/*!
 Home is the main window class.
 Here, a new user can be created, a current user can login, or someone can decide to play as a guest.
 */
 void MainGView::gotoHome(){
-    welcomewindow->happyBirthday->setText("");
-    welcomewindow->helloLabel->setText("Hello Guest!");
     loginpage->curUser=NULL;
     signuppage->curUser=NULL;
-    welcomewindow->removeItem(welcomewindow->profilePicture);
-    welcomewindow->game1Scores->setText("Please Sign up/in to save your scores :)");
-    welcomewindow->game2Scores->setText("Please Sign up/in to save your scores :)");
+    welcomewindow -> cleanPage();
     this->setScene(mainwindow);
     this->show();
 }
 
-/*
+/*!
  gets called whenever switching to the welcome window as a guest is needed.
 */
 void MainGView::playAsGuest(){
@@ -100,3 +102,16 @@ void MainGView::playAsGuest(){
     this -> show();
 }
 
+/*!
+    Redirects to Game1: Kill covid 19
+*/
+void MainGView:: playGame1(){
+
+}
+
+/*!
+    Redirects to Game2: Reversi
+*/
+void MainGView:: playGame2() {
+
+}
