@@ -40,7 +40,6 @@ public:
     QPushButton * signupButton;
     QPushButton * guestButton;
 
-
     // Methods:
     void fixLabels();
     void fillScene();

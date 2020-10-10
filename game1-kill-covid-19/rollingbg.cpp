@@ -19,7 +19,7 @@ RollingBg::RollingBg(QWidget *parent)
     });
 
     resize(width, height);
-    timer -> start(20);
+    timer -> start(30);
 }
 
 RollingBg::~RollingBg(){}

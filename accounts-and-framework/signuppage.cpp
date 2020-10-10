@@ -11,6 +11,10 @@ SignupPage::SignupPage(QWidget *parent) : QWidget(parent) {
    ConfirmPasswordEdit = new QLineEdit();
    SecondNameEdit = new QLineEdit();
 
+   PasswordEdit ->setEchoMode(QLineEdit::Password);
+   ConfirmPasswordEdit ->setEchoMode(QLineEdit::Password);
+
+
    AgeBox = new QSpinBox();
    DayBox = new QSpinBox();
    MonthBox = new QSpinBox();
@@ -77,7 +81,7 @@ SignupPage::SignupPage(QWidget *parent) : QWidget(parent) {
 //////////////////////////////// METHODS ////////////////////////////////
 */
 
-/*
+/*!
     called from the setUser() SLOT
     Reads the input from the widgets and attemps to create a new user
     if successful, returns the new user (not yet added to users.json)
@@ -151,7 +155,7 @@ User* SignupPage::createUser(){
 //////////////////////////////// SLOTS ////////////////////////////////
 */
 
-/*
+/*!
     Called whenever the signup button is pressed
     calls createUser() in order to check all necessary conditions before adding a new user to the users.json file
     if createUser() returned a user, setUser() appends it to users.json
@@ -164,7 +168,7 @@ void SignupPage::setUser(){
     json.appendToUserDocument(userJsonObject);
 }
 
-/*
+/*!
     Takes profile picture file path from user
     updates the corresponding class member
 */

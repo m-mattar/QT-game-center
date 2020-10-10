@@ -13,5 +13,6 @@
         <file>game1images/virus-pink.png</file>
         <file>game1images/virus-purple.png</file>
         <file>game1images/white-blood-cell.png</file>
+        <file>game1images/game1Name.png</file>
     </qresource>
 </RCC>

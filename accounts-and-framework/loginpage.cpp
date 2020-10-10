@@ -67,7 +67,7 @@ void LoginPage::fillScene(){
     this -> addWidget(homeButton);
 }
 
-/*
+/*!
     adjusts the design of the labels (color, backround, font, ...)
 */
 void LoginPage::fixLabels(){
@@ -93,7 +93,7 @@ void LoginPage::fixLabels(){
 //////////////////////////////// SLOTS ////////////////////////////////////
 */
 
-/*
+/*!
     Gets called after a user has attempted to login.
     using the json.cpp utility class:
         - loads the users.json file using json.getJsonDocument()

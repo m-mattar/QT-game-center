@@ -30,7 +30,7 @@ WelcomeWindow::WelcomeWindow(QObject *parent) : QGraphicsScene(parent) {
 
 }
 
-/*
+/*!
     Sets the icons of the games in their corresponding place on the scene
 */
 void WelcomeWindow:: fixPixmapItems(){
@@ -41,7 +41,7 @@ void WelcomeWindow:: fixPixmapItems(){
     game2Pic->setPos(QPointF(240, 250));
 }
 
-/*
+/*!
     Sets the geometry of the widgets
 */
 void WelcomeWindow:: fixWidgets(){
@@ -56,7 +56,7 @@ void WelcomeWindow:: fixWidgets(){
     game2Scores->setWordWrap(true);
 }
 
-/*
+/*!
     Decodes a user's profile picture from a QJsonValue into a QPixmap
     sets the Pixmap p to the corresponding profile pic location on the scene
 */
