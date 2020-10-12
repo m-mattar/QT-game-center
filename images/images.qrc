@@ -14,5 +14,6 @@
         <file>game1images/virus-purple.png</file>
         <file>game1images/white-blood-cell.png</file>
         <file>game1images/game1Name.png</file>
+        <file>game1images/mike.png</file>
     </qresource>
 </RCC>

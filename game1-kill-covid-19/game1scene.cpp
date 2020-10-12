@@ -14,7 +14,6 @@ Game1scene::Game1scene() {
 
     rollingbg = new RollingBg();
 
-
     gameNameTimer = new QTimer(this);
     gameNameTimer->start(20);
 
@@ -34,7 +33,6 @@ void Game1scene::fillScene(){
 
     gameName->setPos(QPointF(150, 100));
     this -> addItem(gameName);
-
 }
 
 void Game1scene::connectButtons(){
@@ -45,8 +43,17 @@ void Game1scene::connectButtons(){
 void Game1scene::startGame(){
     virusLarge = new VirusLarge();
     this->addItem(virusLarge);
+
+    arrow = new Arrow();
+    this->addItem(arrow);
+
+    syringe = new Syringe();
+    this->addItem(syringe);
+
     gameNameTimer->stop();
     this->removeItem(gameName);
+
+   // startButton->setEnabled(false);
 }
 
 void Game1scene::updateGameName(){

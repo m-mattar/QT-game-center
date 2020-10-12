@@ -9,6 +9,8 @@
 #include "../accounts-and-framework/user.h"
 #include "rollingbg.h"
 #include "viruslarge.h"
+#include "syringe.h"
+#include "arrow.h"
 
 
 class Game1scene : public QGraphicsScene {
@@ -17,6 +19,8 @@ public:
     explicit Game1scene();
 
     RollingBg * rollingbg;
+    Syringe * syringe;
+    Arrow * arrow;
     VirusLarge * virusLarge;
 
     QPushButton * homeButton;

@@ -11,8 +11,8 @@ class VirusLarge: public QObject, public QGraphicsPixmapItem{
 public:
     explicit VirusLarge(QObject *parent = nullptr);
 
-    QString picturePath;
-    QString smashedPicPath;
+    QString picturePath = ":/game1images/virus-green.png";
+    QString smashedPicPath = ":/game1images/mike.png";
 
     bool smashed = false;
 
@@ -20,6 +20,8 @@ public:
     int virusType;
 
     QTimer * timer;
+
+    void collidedWithSyringe();
 
 signals:
 

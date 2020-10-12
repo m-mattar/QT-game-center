@@ -10,8 +10,10 @@ SOURCES += \
     accounts-and-framework/user.cpp \
     accounts-and-framework/util.cpp \
     accounts-and-framework/welcomewindow.cpp \
+    game1-kill-covid-19/arrow.cpp \
     game1-kill-covid-19/game1scene.cpp \
     game1-kill-covid-19/rollingbg.cpp \
+    game1-kill-covid-19/syringe.cpp \
     game1-kill-covid-19/viruslarge.cpp \
     main.cpp \
     maingview.cpp \
@@ -24,8 +26,10 @@ HEADERS += \
     accounts-and-framework/user.h \
     accounts-and-framework/util.h \
     accounts-and-framework/welcomewindow.h \
+    game1-kill-covid-19/arrow.h \
     game1-kill-covid-19/game1scene.h \
     game1-kill-covid-19/rollingbg.h \
+    game1-kill-covid-19/syringe.h \
     game1-kill-covid-19/viruslarge.h \
     maingview.h \
 
