@@ -5,6 +5,7 @@
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
 #include <QTimer>
+#include <QKeyEvent>
 
 class Arrow : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
@@ -18,12 +19,16 @@ public:
 
   //  QTimer * timerRotate;
     QTimer * timerUpdate;
+    QTimer * timerShoot;
+
+    void keyPressEvent(QKeyEvent * event);
 
 signals:
 
 public slots:
   //  void rotate();
     void update();
+    void shoot();
 
 };
 

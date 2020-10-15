@@ -45,6 +45,8 @@ void Game1scene::startGame(){
     this->addItem(virusLarge);
 
     arrow = new Arrow();
+    arrow -> setFlag(QGraphicsItem::ItemIsFocusable);
+    arrow -> setFocus();
     this->addItem(arrow);
 
     syringe = new Syringe();
