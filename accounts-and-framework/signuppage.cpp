@@ -150,6 +150,22 @@ User* SignupPage::createUser(){
     return user;
 }
 
+/*!
+    - this methods resets all the widgets that took user input
+    - Gets called whenever a user wants to signup
+*/
+void SignupPage::cleanPage(){
+    FirstNameEdit->setText("");
+    UsernameEdit->setText("");
+    PasswordEdit->setText("");
+    ConfirmPasswordEdit->setText("");
+    SecondNameEdit->setText("");
+
+    AgeBox->setValue(0);
+    DayBox->setValue(0);
+    MonthBox->setValue(0);
+    YearBox->setValue(0);
+}
 
 /*
 //////////////////////////////// SLOTS ////////////////////////////////
@@ -175,4 +191,6 @@ void SignupPage::setUser(){
 void SignupPage::selectImage(){
     this->file_name = QFileDialog::getOpenFileName(this,"Open a File","");
 }
+
+
 

@@ -1,67 +1,55 @@
 #include "arrow.h"
 
 Arrow::Arrow(QObject *parent) : QObject(parent) {
-   // timerRotate = new QTimer(this);
-    timerUpdate = new QTimer(this);
+    timerRotate = new QTimer(this);
     timerShoot = new QTimer(this);
 
     this->setEnabled(true);
 
-    x = 300;
-    y = 100;
-    direction = 1; //on the right of the scene
+    x = 250;
+    y = 550;
 
-    this->setPixmap(QPixmap(arrowPicPath).scaled(60, 60));
+    this->setPixmap(QPixmap(arrowPicPath).scaled(60, 150));
     this ->setPos(x, y);
 
+    QObject::connect(timerRotate, SIGNAL(timeout()), this, SLOT(rotate()));
+    //QObject::connect(timerShoot, SIGNAL(timeout()), this, SLOT(shoot()));
 
-    QObject::connect(timerUpdate, SIGNAL(timeout()), this, SLOT(update()));
-    QObject::connect(timerShoot, SIGNAL(timeout()), this, SLOT(shoot()));
-    timerUpdate->start(30);
-
-    timerShoot->start(30);
+    this->setTransformOriginPoint(75, 500);
+    this->setRotation(90);
+    timerRotate->start(100);
 }
 
 //SLOTS
 
-void Arrow::update(){
-    y+= 2;
-    setPos(x,y);
 
-//    if(!scene()->collidingItems(this).isEmpty()){
-//        scene()->removeItem(this);
-//        delete(this);
-//    }
+void Arrow::rotate(){
+    rotationDegree = rotationDegree + direction * 2;
+    this->setRotation(rotationDegree);
 
-    if(y>800){
-        //sends signal that user lost
-        scene()->removeItem(this);
-        delete this;
+    if(rotationDegree >= 12 || rotationDegree <= -12){
+        direction *= -1;
     }
+
 }
 
 void Arrow::shoot(){
     x-=3;
-
-    if(x < 0){
-        x = 0;
+    //timerRotate->stop();
+    if(x < 100){
+        x = 100;
         timerShoot->stop();
     }
 
     this->setPos(x, y);
-
-
-
 }
 
 
 
 //KEY EVENTS
-void Arrow:: keyPressEvent(QKeyEvent* event){
-    if(event->key() == Qt::Key_Right){
+void Arrow::keyPressEvent(QKeyEvent *event){
+    if(event->key() == Qt::Key_Space){
         timerShoot->start(30);
-        timerUpdate->stop();
     }
-    timerShoot->start(30);
 
 }

@@ -27,6 +27,7 @@ public:
     QPushButton * startButton;
 
     QGraphicsPixmapItem * gameName;
+    QGraphicsPixmapItem * circle;
 
     QTimer * gameNameTimer;
     int gameNamey = 130;
@@ -37,6 +38,7 @@ public:
     void fixWidgets();
     void fillScene();
     void connectButtons();
+    void addCircle();
 
 signals:
 

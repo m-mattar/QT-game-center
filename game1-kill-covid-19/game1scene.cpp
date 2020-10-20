@@ -19,6 +19,7 @@ Game1scene::Game1scene() {
 
     fillScene();
     connectButtons();
+
 }
 
 void Game1scene::fillScene(){
@@ -45,17 +46,23 @@ void Game1scene::startGame(){
     this->addItem(virusLarge);
 
     arrow = new Arrow();
+    this->addItem(arrow);
     arrow -> setFlag(QGraphicsItem::ItemIsFocusable);
     arrow -> setFocus();
-    this->addItem(arrow);
-
-    syringe = new Syringe();
-    this->addItem(syringe);
 
     gameNameTimer->stop();
     this->removeItem(gameName);
 
-   // startButton->setEnabled(false);
+    startButton->setEnabled(false);
+    addCircle();
+}
+
+void Game1scene::addCircle(){
+    circle = new QGraphicsPixmapItem;
+    circle->setPixmap(QPixmap(":/game1images/half-circle.png").scaled(200,75));
+    circle->setPos(QPointF(175,600));
+    this->addItem(circle);
+
 }
 
 void Game1scene::updateGameName(){
@@ -72,3 +79,5 @@ void Game1scene::updateGameName(){
         }
     }
 }
+
+

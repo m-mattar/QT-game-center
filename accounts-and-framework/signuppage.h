@@ -56,6 +56,7 @@ public:
     QString file_name;
 
     User* createUser();
+    void cleanPage();
 
 signals:
 

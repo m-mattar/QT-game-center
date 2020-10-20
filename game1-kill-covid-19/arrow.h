@@ -15,10 +15,11 @@ public:
 
     QString arrowPicPath = ":/game1images/arrow.png";
 
-    int x, y, direction;
+    int x, y;
+    int direction = 1; //on the right of the scene
+    int rotationDegree = 0;
 
-  //  QTimer * timerRotate;
-    QTimer * timerUpdate;
+    QTimer * timerRotate;
     QTimer * timerShoot;
 
     void keyPressEvent(QKeyEvent * event);
@@ -26,8 +27,7 @@ public:
 signals:
 
 public slots:
-  //  void rotate();
-    void update();
+    void rotate();
     void shoot();
 
 };

@@ -47,8 +47,9 @@ void MainGView::login(){
 
 // opens a widget form to let a new user signup
 void MainGView::signup(){
-      this->hide();
-      signuppage->show();
+    this->hide();
+    signuppage->cleanPage();
+    signuppage->show();
 }
 
 /*!

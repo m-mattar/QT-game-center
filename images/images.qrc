@@ -15,5 +15,6 @@
         <file>game1images/white-blood-cell.png</file>
         <file>game1images/game1Name.png</file>
         <file>game1images/mike.png</file>
+        <file>game1images/half-circle.png</file>
     </qresource>
 </RCC>
