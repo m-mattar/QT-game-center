@@ -35,10 +35,20 @@ public:
     //will be initialized upon entering the page
     User * curUser = NULL;
 
+
+    QLabel * highscoreL;
+    QLabel * currentScoreL;
+    QLabel * scoreHistoryL;
+    QLabel * scoreHistory;
+    int highscore = 0;
+    int currentScore = 0;
+
     void fixWidgets();
     void fillScene();
+    void setScoreLabels();
     void connectButtons();
     void addCircle();
+    void displayScores();
 
 signals:
 

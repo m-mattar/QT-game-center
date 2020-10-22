@@ -6,6 +6,8 @@
 #include <QGraphicsScene>
 #include <QTimer>
 #include <QKeyEvent>
+#include "syringe.h"
+
 
 class Arrow : public QObject, public QGraphicsPixmapItem {
     Q_OBJECT
@@ -13,9 +15,10 @@ class Arrow : public QObject, public QGraphicsPixmapItem {
 public:
     explicit Arrow(QObject *parent = nullptr);
 
+    Syringe * syringe;
+
     QString arrowPicPath = ":/game1images/arrow.png";
 
-    int x, y;
     int direction = 1; //on the right of the scene
     int rotationDegree = 0;
 
@@ -23,6 +26,7 @@ public:
     QTimer * timerShoot;
 
     void keyPressEvent(QKeyEvent * event);
+
 
 signals:
 

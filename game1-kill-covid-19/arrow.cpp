@@ -6,22 +6,17 @@ Arrow::Arrow(QObject *parent) : QObject(parent) {
 
     this->setEnabled(true);
 
-    x = 250;
-    y = 550;
-
     this->setPixmap(QPixmap(arrowPicPath).scaled(60, 150));
-    this ->setPos(x, y);
+    this ->setPos(250, 550);
 
     QObject::connect(timerRotate, SIGNAL(timeout()), this, SLOT(rotate()));
-    //QObject::connect(timerShoot, SIGNAL(timeout()), this, SLOT(shoot()));
+    QObject::connect(timerShoot, SIGNAL(timeout()), this, SLOT(shoot()));
 
     this->setTransformOriginPoint(75, 500);
-    this->setRotation(90);
     timerRotate->start(100);
 }
 
 //SLOTS
-
 
 void Arrow::rotate(){
     rotationDegree = rotationDegree + direction * 2;
@@ -30,18 +25,16 @@ void Arrow::rotate(){
     if(rotationDegree >= 12 || rotationDegree <= -12){
         direction *= -1;
     }
-
 }
 
 void Arrow::shoot(){
-    x-=3;
-    //timerRotate->stop();
-    if(x < 100){
-        x = 100;
-        timerShoot->stop();
+    if(rotationDegree >= 0){
+        syringe->setPos(syringe->x()+3, syringe->y()-3);
     }
-
-    this->setPos(x, y);
+    else{
+        syringe->setPos(syringe->x()-3, syringe->y()-3);
+    }
+    //check collision
 }
 
 
@@ -49,7 +42,13 @@ void Arrow::shoot(){
 //KEY EVENTS
 void Arrow::keyPressEvent(QKeyEvent *event){
     if(event->key() == Qt::Key_Space){
-        timerShoot->start(30);
-    }
+        syringe = new Syringe();
+        syringe->setPos(x(), y());
+        syringe->setTransformOriginPoint(75, 500);
+        syringe->setRotation(rotationDegree);
+        scene()->addItem(syringe);
 
+        timerShoot->start(30);
+        timerRotate->stop();
+    }
 }

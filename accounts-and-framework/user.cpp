@@ -4,6 +4,9 @@
 User::User(QObject *parent) : QObject(parent) {
 }
 
+/*!
+    Returns a user from the users.json
+*/
 User::User(QJsonObject result){
     firstName = result["First Name"].toString();
     lastName = result["Last Name"].toString();

@@ -14,14 +14,9 @@ public:
 
     QString syringePicPath = ":/game1images/syringe.png";
 
-    QTimer * timer;
-
-    int x, y, direction;
-
 signals:
 
 public slots:
-    void update();
 
 };
 
