@@ -29,6 +29,7 @@ public:
 
 
 signals:
+    void failure();
 
 public slots:
     void rotate();

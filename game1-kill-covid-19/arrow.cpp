@@ -1,4 +1,5 @@
 #include "arrow.h"
+\
 
 Arrow::Arrow(QObject *parent) : QObject(parent) {
     timerRotate = new QTimer(this);
@@ -29,12 +30,18 @@ void Arrow::rotate(){
 
 void Arrow::shoot(){
     if(rotationDegree >= 0){
-        syringe->setPos(syringe->x()+3, syringe->y()-3);
+        syringe->setPos(syringe->x() + 0.6 * (rotationDegree), syringe->y() - 2 * (rotationDegree));
     }
     else{
-        syringe->setPos(syringe->x()-3, syringe->y()-3);
+        syringe->setPos(syringe->x() + 0.6 * (rotationDegree), syringe->y() + 2 * (rotationDegree));
     }
-    //check collision
+
+    if(syringe->x() > 400 || syringe->x() < 100 || syringe->y() < 0){
+        timerShoot->stop();
+        scene()->removeItem(syringe);
+        delete syringe;
+        emit failure();
+    }
 }
 
 

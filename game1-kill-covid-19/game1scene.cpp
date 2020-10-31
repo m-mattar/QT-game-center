@@ -23,8 +23,8 @@ Game1scene::Game1scene() {
     scoreHistory = new QLabel;
 
     fillScene();
-    setScoreLabels();
     connectButtons();
+    setScoreLabels();
 
 }
 
@@ -53,12 +53,11 @@ void Game1scene::setScoreLabels(){
 void Game1scene::connectButtons(){
     QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(startGame()));
     QObject::connect(gameNameTimer, SIGNAL(timeout()), this, SLOT(updateGameName()));
+    QObject::connect(arrow, SIGNAL(failure()), this, SLOT(userFailed()));
+
 }
 
 void Game1scene::startGame(){
-    virusLarge = new VirusLarge();
-    this->addItem(virusLarge);
-
     arrow = new Arrow();
     this->addItem(arrow);
     arrow -> setFlag(QGraphicsItem::ItemIsFocusable);
@@ -68,6 +67,8 @@ void Game1scene::startGame(){
     this->removeItem(gameName);
 
     startButton->setEnabled(false);
+
+    addVirus();
     addCircle();
 }
 
@@ -111,11 +112,64 @@ void Game1scene::displayScores(){
     res.remove(res.size()-1, 1);
     scoreHistory->setText(res);
 
+    if(currentScore > highscore){
+        highscore = currentScore;
+    }
+
     highscore = curUser->game1_highest;
-    highscoreL->setText("Your highscore is: " + QString(highscore));
+    highscoreL->setText("Your highscore is: " + QString::number(highscore));
 
-    currentScoreL->setText("Score: " + QString(currentScore));
+    currentScoreL->setText("Score: " + QString::number(currentScore));
+}
 
+void Game1scene::addVirus(){
+    virusLarge = new VirusLarge();
+    QObject::connect(virusLarge, SIGNAL(collision()), this, SLOT(collisionVirusSyring()));
+// to start arrow timers again, and rollingbg timer
+    QObject::connect(virusLarge, SIGNAL(failure()), this, SLOT(userFailed()));
+
+    this->addItem(virusLarge);
+}
+
+
+/*!
+// need to send signal to game1scene:
+//increment arrow speed if condition is met
+// to add another virus
+     increment user score
+
+*/
+void Game1scene::collisionVirusSyring(){
+    arrow->timerRotate->start(100);
+
+    int virustp = virusLarge->virusType;
+
+    currentScore += virusLarge->virusScore;
+
+    if(virustp == 1){
+        countLarge += 1;
+    } else if(virustp == 2){
+        countMedium += 1;
+    }else{
+        countSmall += 1;
+    }
+
+    delete virusLarge;
+    this -> addVirus();
+
+    currentScoreL->setText("Score: " + QString::number(currentScore));
+}
+
+void Game1scene::userFailed(){
+    rollingbg->timer->stop();
+    arrow->timerRotate->stop();
+    displayScores();
+    updateUserScores();
+
+    startButton->setEnabled(true);
 
 }
 
+void Game1scene::updateUserScores(){
+
+}

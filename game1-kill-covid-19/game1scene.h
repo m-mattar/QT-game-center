@@ -21,6 +21,7 @@ public:
     RollingBg * rollingbg;
     Syringe * syringe;
     Arrow * arrow;
+
     VirusLarge * virusLarge;
 
     QPushButton * homeButton;
@@ -42,6 +43,7 @@ public:
     QLabel * scoreHistory;
     int highscore = 0;
     int currentScore = 0;
+    int countLarge = 0, countMedium = 0, countSmall = 0;
 
     void fixWidgets();
     void fillScene();
@@ -49,12 +51,16 @@ public:
     void connectButtons();
     void addCircle();
     void displayScores();
+    void addVirus();
+    void updateUserScores();
 
 signals:
 
 public slots:
     void startGame();
     void updateGameName();
+    void collisionVirusSyring();
+    void userFailed();
 
 };
 

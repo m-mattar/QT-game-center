@@ -5,6 +5,7 @@
 #include <QTimer>
 #include <QGraphicsPixmapItem>
 #include <QGraphicsScene>
+#include "syringe.h"
 
 class VirusLarge: public QObject, public QGraphicsPixmapItem{
      Q_OBJECT
@@ -17,13 +18,16 @@ public:
     bool smashed = false;
 
     int x, y;
-    int virusType;
+    int virusType = 1, virusScore = 0;
 
     QTimer * timer;
 
     void collidedWithSyringe();
+    void userFailed();
 
 signals:
+    void collision();
+    void failure();
 
 public slots:
     void update();

@@ -12,17 +12,16 @@ public:
     explicit RollingBg(QWidget *parent = nullptr);
     ~RollingBg();
 
+    QTimer * timer;
+
 protected:
     void paintEvent(QPaintEvent * event) override;
 
 private:
     QPixmap background;
-    QTimer * timer;
     int offset;
     int height;
     int width;
-
-
 
 signals:
 

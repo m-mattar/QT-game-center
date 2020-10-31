@@ -1,6 +1,6 @@
 #include "syringe.h"
 
 Syringe::Syringe(QObject *parent) : QObject(parent) {
-    this->setPixmap(QPixmap(syringePicPath).scaled(60, 60));
+    this->setPixmap(QPixmap(syringePicPath).scaled(20, 20));
 }
 
