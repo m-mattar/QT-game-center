@@ -6,6 +6,7 @@ MainGView::MainGView(){
     mainwindow = new MainWindow();
     welcomewindow = new WelcomeWindow();
     game1scene = new Game1scene();
+    json = new Json();
 
     this->setScene(mainwindow);
     connectButtons();
@@ -91,6 +92,11 @@ Here, a new user can be created, a current user can login, or someone can decide
 void MainGView::gotoHome(){
     loginpage->curUser=NULL;
     signuppage->curUser=NULL;
+
+    if(game1scene->curUser){
+        json->updateUserScores(game1scene->curUser->username, game1scene->curUser->game1_scores, '1');
+    }
+
     welcomewindow -> cleanPage();
     this->setScene(mainwindow);
     this->show();

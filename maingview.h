@@ -8,6 +8,7 @@
 #include "accounts-and-framework/signuppage.h"
 #include "accounts-and-framework/mainwindow.h"
 #include "accounts-and-framework/welcomewindow.h"
+#include "accounts-and-framework/json.h"
 
 #include "game1-kill-covid-19/game1scene.h"
 
@@ -25,6 +26,7 @@ public:
     MainWindow * mainwindow;
     WelcomeWindow * welcomewindow;
     Game1scene * game1scene;
+    Json * json;
 
     void connectButtons();
 

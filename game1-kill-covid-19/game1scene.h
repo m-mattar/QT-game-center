@@ -28,10 +28,14 @@ public:
     QPushButton * startButton;
 
     QGraphicsPixmapItem * gameName;
+    QGraphicsPixmapItem * gameOver;
+    QGraphicsPixmapItem * gameWon;
     QGraphicsPixmapItem * circle;
 
     QTimer * gameNameTimer;
-    int gameNamey = 130;
+    QTimer * gameOverTimer;
+    QTimer * gameWonTimer;
+    int gameNamey = 130, gameOvery = 130, gameWony = 130;
 
     //will be initialized upon entering the page
     User * curUser = NULL;
@@ -44,6 +48,8 @@ public:
     int highscore = 0;
     int currentScore = 0;
     int countLarge = 0, countMedium = 0, countSmall = 0;
+    int counter = 0;
+    int levelSpeed = 50;
 
     void fixWidgets();
     void fillScene();
@@ -53,12 +59,20 @@ public:
     void displayScores();
     void addVirus();
     void updateUserScores();
+    void increaseLevel();
+    void userWon();
+
+private:
+    void keyPressEvent(QKeyEvent * event);
+
 
 signals:
 
 public slots:
     void startGame();
     void updateGameName();
+    void updateGameOver();
+    void updateGameWon();
     void collisionVirusSyring();
     void userFailed();
 

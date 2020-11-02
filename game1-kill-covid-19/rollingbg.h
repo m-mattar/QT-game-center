@@ -13,6 +13,7 @@ public:
     ~RollingBg();
 
     QTimer * timer;
+    int timerSpeed = 50;
 
 protected:
     void paintEvent(QPaintEvent * event) override;

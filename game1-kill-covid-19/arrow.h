@@ -21,11 +21,12 @@ public:
 
     int direction = 1; //on the right of the scene
     int rotationDegree = 0;
+    int timerRotateSpeed = 70;
 
     QTimer * timerRotate;
     QTimer * timerShoot;
 
-    void keyPressEvent(QKeyEvent * event);
+    void spacePressed();
 
 
 signals:

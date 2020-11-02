@@ -10,7 +10,7 @@
 class VirusLarge: public QObject, public QGraphicsPixmapItem{
      Q_OBJECT
 public:
-    explicit VirusLarge(QObject *parent = nullptr);
+    explicit VirusLarge(QObject *parent = nullptr, int levelSpeed = 50);
 
     QString picturePath = ":/game1images/virus-green.png";
     QString smashedPicPath = ":/game1images/mike.png";
@@ -19,6 +19,7 @@ public:
 
     int x, y;
     int virusType = 1, virusScore = 0;
+    int timerSpeed = 50;
 
     QTimer * timer;
 

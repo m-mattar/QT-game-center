@@ -9,6 +9,13 @@ Game1scene::Game1scene() {
     gameName = new QGraphicsPixmapItem;
     gameName->setPixmap(QPixmap(":/game1images/game1Name.png").scaled(300, 70));
 
+    gameOver = new QGraphicsPixmapItem;
+    gameOver->setPixmap(QPixmap(":/game1images/gameOver.png").scaled(300, 70));
+
+    gameWon = new QGraphicsPixmapItem;
+    gameWon->setPixmap(QPixmap(":/game1images/gameWon.png").scaled(300, 70));
+
+
     homeButton = new QPushButton("Home");
     startButton = new QPushButton("Start");
 
@@ -16,6 +23,8 @@ Game1scene::Game1scene() {
 
     gameNameTimer = new QTimer(this);
     gameNameTimer->start(20);
+    gameOverTimer = new QTimer(this);
+    gameWonTimer = new QTimer(this);
 
     highscoreL = new QLabel("Your Highscore is: ");
     currentScoreL = new QLabel("Score: ");
@@ -40,20 +49,24 @@ void Game1scene::fillScene(){
 
     gameName->setPos(QPointF(150, 100));
     this -> addItem(gameName);
+
+    gameOver->setPos(QPointF(150,100));
+    gameWon->setPos(QPointF(150,100));
 }
 
 void Game1scene::setScoreLabels(){
     highscoreL->setGeometry(520, 100, 200, 30);
     this->addWidget(highscoreL);
 
-    currentScoreL->setGeometry(520, 200, 200, 50);
+    currentScoreL->setGeometry(520, 200, 200, 100);
     this->addWidget(currentScoreL);
 }
 
 void Game1scene::connectButtons(){
     QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(startGame()));
     QObject::connect(gameNameTimer, SIGNAL(timeout()), this, SLOT(updateGameName()));
-    QObject::connect(arrow, SIGNAL(failure()), this, SLOT(userFailed()));
+    QObject::connect(gameOverTimer, SIGNAL(timeout()), this, SLOT(updateGameOver()));
+    QObject::connect(gameWonTimer, SIGNAL(timeout()), this, SLOT(updateGameWon()));
 
 }
 
@@ -63,10 +76,20 @@ void Game1scene::startGame(){
     arrow -> setFlag(QGraphicsItem::ItemIsFocusable);
     arrow -> setFocus();
 
+    currentScore = 0;
+    countLarge = countSmall = countMedium = 0;
+    currentScoreL->setText("Score: " + QString::number(currentScore));
+
     gameNameTimer->stop();
+    gameOverTimer->stop();
+    gameWonTimer->stop();
     this->removeItem(gameName);
+    this->removeItem(gameOver);
+    this->removeItem(gameWon);
 
     startButton->setEnabled(false);
+
+    QObject::connect(arrow, SIGNAL(failure()), this, SLOT(userFailed()));
 
     addVirus();
     addCircle();
@@ -99,48 +122,95 @@ void Game1scene::updateGameName(){
     }
 }
 
+void Game1scene::updateGameOver(){
+    if(gameOver->y() < gameOvery){
+        gameOver->setPos(gameOver->x(), gameOver->y() + 2);
+        if(gameOver->y() >= gameOvery){
+            gameOvery = 90;
+        }
+    }
+    else if(gameOver->y() > gameOvery){
+        gameOver->setPos(gameOver->x(), gameOver->y() - 2);
+        if(gameOver->y() <= gameOvery){
+            gameOvery = 130;
+        }
+    }
+}
+
+void Game1scene::updateGameWon(){
+    if(gameWon->y() < gameWony){
+        gameWon->setPos(gameWon->x(), gameWon->y() + 2);
+        if(gameWon->y() >= gameWony){
+            gameWony = 90;
+        }
+    }
+    else if(gameWon->y() > gameWony){
+        gameWon->setPos(gameWon->x(), gameWon->y() - 2);
+        if(gameWon->y() <= gameWony){
+            gameWony = 130;
+        }
+    }
+}
+
 /*!
     updates the score labels on the gameScene
 */
 void Game1scene::displayScores(){
     //get last 5 scores
-    QString res = "";
-    QVector<int> game1 = curUser->game1_scores;
-    for(int i :game1){
-        res = res + QString::number(i)+",";
+
+    if(curUser){
+        QString res = "";
+        QVector<int> game1 = curUser->game1_scores;
+        for(int i :game1){
+            res = res + QString::number(i)+",";
+        }
+        res.remove(res.size()-1, 1);
+        scoreHistory->setText(res);
     }
-    res.remove(res.size()-1, 1);
-    scoreHistory->setText(res);
 
     if(currentScore > highscore){
         highscore = currentScore;
     }
 
-    highscore = curUser->game1_highest;
     highscoreL->setText("Your highscore is: " + QString::number(highscore));
 
-    currentScoreL->setText("Score: " + QString::number(currentScore));
+    currentScoreL->setText("Score: " + QString::number(currentScore)
+                           + "\nLarge Viruses Hit: " + QString::number(countLarge)
+                           + "\nMedium Viruses Hit: " + QString::number(countMedium)
+                           + "\nSmall Viruses Hit: " + QString::number(countSmall)
+                           );
 }
 
 void Game1scene::addVirus(){
-    virusLarge = new VirusLarge();
+    virusLarge = new VirusLarge(nullptr, levelSpeed);
     QObject::connect(virusLarge, SIGNAL(collision()), this, SLOT(collisionVirusSyring()));
-// to start arrow timers again, and rollingbg timer
     QObject::connect(virusLarge, SIGNAL(failure()), this, SLOT(userFailed()));
 
     this->addItem(virusLarge);
 }
+/*
 
+TODO:
+- update the user info
+- fix angle
+- sound effects
+
+
+
+DONE:
+- increase level every 5 shot viruses
+- check score if == 150 -> winGame
+- F1 key should startGame()
+- fix arrow thingy
+
+*/
 
 /*!
-// need to send signal to game1scene:
-//increment arrow speed if condition is met
-// to add another virus
-     increment user score
 
 */
 void Game1scene::collisionVirusSyring(){
-    arrow->timerRotate->start(100);
+    arrow->timerRotate->start(arrow->timerRotateSpeed);
+    arrow->timerShoot->stop();
 
     int virustp = virusLarge->virusType;
 
@@ -154,22 +224,88 @@ void Game1scene::collisionVirusSyring(){
         countSmall += 1;
     }
 
-    delete virusLarge;
-    this -> addVirus();
+    counter++;
+    if(counter == 2){
+        increaseLevel();
+        counter = 0;
+    }
 
     currentScoreL->setText("Score: " + QString::number(currentScore));
+
+    if(currentScore >= 10){
+        userWon();
+    }
+    else{
+        this -> addVirus();
+    }
+
+    delete arrow->syringe;
 }
 
-void Game1scene::userFailed(){
-    rollingbg->timer->stop();
+void Game1scene::userWon(){
     arrow->timerRotate->stop();
+    arrow->timerShoot->stop();
+
     displayScores();
     updateUserScores();
+    delete arrow;
 
+    this->addItem(gameWon);
+    gameWonTimer->start(20);
+
+
+    //this->removeItem(virusLarge);
     startButton->setEnabled(true);
 
 }
 
+void Game1scene::userFailed(){
+    arrow->timerRotate->stop();
+    arrow->timerShoot->stop();
+
+    displayScores();
+    updateUserScores();
+    delete arrow;
+
+    this->addItem(gameOver);
+    gameOverTimer->start(20);
+
+    this->removeItem(virusLarge);
+    delete virusLarge;
+    startButton->setEnabled(true);
+}
+
 void Game1scene::updateUserScores(){
+    if(curUser){
+        curUser->game1_scores.push_back(currentScore);
+        curUser->game1_scores.removeAt(0);
+    }
+}
+
+void Game1scene::increaseLevel(){
+    if(levelSpeed > 10){
+        levelSpeed-=10;
+        rollingbg->timer->stop();
+        rollingbg->timerSpeed = levelSpeed;
+        rollingbg->timer->start(rollingbg->timerSpeed);
+    }
+
+    if(arrow->timerRotateSpeed > 30){
+        arrow->timerRotate->stop();
+        arrow->timerRotateSpeed-=10;
+        arrow->timerRotate->start(arrow->timerRotateSpeed);
+    }
+}
+
+void Game1scene::keyPressEvent(QKeyEvent * event){
+    if(event->key() == Qt::Key_F1){
+        if(startButton->isEnabled()){
+            startGame();
+        }
+    }
+    else if(event->key() == Qt::Key_Space){
+        arrow->spacePressed();
+    }
 
 }
+

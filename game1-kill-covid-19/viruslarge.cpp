@@ -1,7 +1,8 @@
 #include "viruslarge.h"
 
-VirusLarge::VirusLarge(QObject *parent): QObject(parent) {
+VirusLarge::VirusLarge(QObject *parent, int levelSpeed): QObject(parent) {
     timer = new QTimer(this);
+    timerSpeed = levelSpeed;
 
     //random type
     virusType = rand() % 3 + 1;
@@ -37,8 +38,7 @@ VirusLarge::VirusLarge(QObject *parent): QObject(parent) {
     this ->setPos(x, y);
 
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(update()));
-    timer->start(30);
-
+    timer->start(timerSpeed);
 }
 
 void VirusLarge::update(){
@@ -68,11 +68,13 @@ void VirusLarge::update(){
 void VirusLarge::collidedWithSyringe(){
     this->setPixmap(QPixmap(smashedPicPath).scaled(100, 100));
     QTimer * timerCollided = new QTimer(this);
-    timerCollided->start(2000);
 
+    emit collision();
+
+    timerCollided->start(500);
     connect(timerCollided, &QTimer::timeout, [this]{
         scene()->removeItem((this));
-        emit collision();
+        delete this;
     });
 }
 

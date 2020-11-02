@@ -2,7 +2,7 @@
 
 Json::Json(){}
 
-/*
+/*!
     Returns users.json as a QJsonDocument
 */
 QJsonDocument Json::getJsonDocument(){
@@ -18,7 +18,7 @@ QJsonDocument Json::getJsonDocument(){
     return jsonDocument;
 }
 
-/*
+/*!
     Takes a newly created user and appends it to the users.json document
 */
 void Json::appendToUserDocument(QJsonObject user){
@@ -33,7 +33,7 @@ void Json::appendToUserDocument(QJsonObject user){
     file.close();
 }
 
-/*
+/*!
     Checks if a user who attempted to login has already signed up before
     if the login was successful, returns the user as a QJsonObject
     else returns an empty QJSonObject
@@ -49,7 +49,34 @@ QJsonObject Json::checkUser(QJsonArray &usersArray, QString &username, QString &
     return QJsonObject();
 }
 
-/*
+void Json::updateUserScores(QString username, QVector<int> gameScores, char gameNumber){
+    QJsonDocument jsonDocument = getJsonDocument();
+    QJsonArray usersArray = jsonDocument.array();
+
+    //get scores as JSON
+    QJsonArray res;
+    for (int i: gameScores) {
+         res.append(QJsonValue(i));
+    }
+
+    //search for user
+
+//    for(auto user : usersArray){
+
+//        if(user.toObject().value("Username") == username){
+//            user.toObject().value("game" + QString(gameNumber) + "_score") = res;
+//        }
+//    }
+
+    jsonDocument.setArray(usersArray);
+
+    QFile file(filePath);
+    file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
+    file.write(jsonDocument.toJson());
+    file.close();
+}
+
+/*!
     Takes a picture, encodes it, and returns the corresponding hashed QJsonValue
 */
 QJsonValue Json::EncodeImage(const QPixmap &p){
@@ -60,7 +87,7 @@ QJsonValue Json::EncodeImage(const QPixmap &p){
     return {QLatin1String(encoded)};
 }
 
-/*
+/*!
     Takes a QJsonValue corresponding to a picture, decodes it, and returns the corresponding QPixmap
 */
 QPixmap DecodeImage(QJsonValue val) {
