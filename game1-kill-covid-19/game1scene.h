@@ -61,6 +61,7 @@ public:
     void updateUserScores();
     void increaseLevel();
     void userWon();
+    void cleanPage();
 
 private:
     void keyPressEvent(QKeyEvent * event);

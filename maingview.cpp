@@ -116,6 +116,7 @@ void MainGView::playAsGuest(){
     - SLOT is connected only to welcome page
 */
 void MainGView:: playGame1(){
+//    game1scene = new Game1scene();
     game1scene -> curUser = welcomewindow -> curUser;
     this ->setScene(game1scene);
     this ->show();
