@@ -49,31 +49,32 @@ QJsonObject Json::checkUser(QJsonArray &usersArray, QString &username, QString &
     return QJsonObject();
 }
 
-void Json::updateUserScores(QString username, QVector<int> gameScores, char gameNumber){
+void Json::updateUserScores(QString username, QVector<int> gameScores, int highscore, int gameNumber){
     QJsonDocument jsonDocument = getJsonDocument();
-    QJsonArray usersArray = jsonDocument.array();
 
-    //get scores as JSON
-    QJsonArray res;
-    for (int i: gameScores) {
-         res.append(QJsonValue(i));
-    }
+        //get scores as JSON
+        QJsonArray arr;
+        for (int i: gameScores) {
+             arr.append(i);
+        }
 
-    //search for user
+        QJsonArray RootArray = jsonDocument.array();
+        for(int i=0;i<RootArray.count();i++){
+                QJsonObject obj = RootArray.at(i).toObject();
+                if(obj["Username"].toString() == username){
+                    obj["game1_score"] = arr;
+                    obj["game1_highest"] = highscore;
+                    RootArray.removeAt(i);
+                    RootArray.insert(i,obj);
+                    jsonDocument.setArray(RootArray);
+                    break;
+                }
+            }
 
-//    for(auto user : usersArray){
-
-//        if(user.toObject().value("Username") == username){
-//            user.toObject().value("game" + QString(gameNumber) + "_score") = res;
-//        }
-//    }
-
-    jsonDocument.setArray(usersArray);
-
-    QFile file(filePath);
-    file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
-    file.write(jsonDocument.toJson());
-    file.close();
+        QFile file(filePath);
+        file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
+        file.write(jsonDocument.toJson());
+        file.close();
 }
 
 /*!

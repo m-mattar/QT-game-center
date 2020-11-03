@@ -1,6 +1,7 @@
 #include "game1scene.h"
 
 Game1scene::Game1scene() {
+
     int height = 800;
     int width = 600;
     this -> setSceneRect(0, 0, width, height);
@@ -28,8 +29,8 @@ Game1scene::Game1scene() {
 
     highscoreL = new QLabel("Your Highscore is: ");
     currentScoreL = new QLabel("Score: ");
-    scoreHistoryL = new QLabel("Your Score History is: ");
-    scoreHistory = new QLabel("");
+    scoreHistoryL = new QLabel("You Score History is: ");
+    scoreHistory = new QLabel;
 
     fillScene();
     connectButtons();
@@ -37,10 +38,6 @@ Game1scene::Game1scene() {
 
 }
 
-
-/*!
-    fixes the buttons and adds them to the game Scene
-*/
 void Game1scene::fillScene(){
     homeButton->setGeometry(520, 600, 100, 30);
     this->addWidget(homeButton);
@@ -58,10 +55,6 @@ void Game1scene::fillScene(){
     gameWon->setPos(QPointF(150,100));
 }
 
-
-/*!
-    Fixes the score labels and adds them to the scene
-*/
 void Game1scene::setScoreLabels(){
     highscoreL->setGeometry(520, 100, 200, 30);
     highscoreL -> setWindowFlag(Qt::FramelessWindowHint); //No Frame
@@ -77,20 +70,14 @@ void Game1scene::setScoreLabels(){
     currentScoreL -> setFont(QFont("Arial", 10));
     this->addWidget(currentScoreL);
 
-    scoreHistory->setGeometry(520, 150, 200, 100);
-    scoreHistory -> setWindowFlag(Qt::FramelessWindowHint); //No Frame
-    scoreHistory -> setAttribute(Qt::WA_NoSystemBackground); //no background
-    scoreHistory -> setStyleSheet("QLabel { font-weight: bold}");
-    scoreHistory -> setFont(QFont("Arial", 10));
-    this->addWidget(scoreHistory);
-
+    scoreHistoryL ->setGeometry(520, 150, 200, 100);
+    scoreHistoryL -> setWindowFlag(Qt::FramelessWindowHint); //No Frame
+    scoreHistoryL -> setAttribute(Qt::WA_NoSystemBackground); //no background
+    scoreHistoryL -> setStyleSheet("QLabel { font-weight: bold}");
+    scoreHistoryL -> setFont(QFont("Arial", 10));
+    this->addWidget(scoreHistoryL);
 }
 
-
-/*!
-    Connects all slots and buttons except the virus related ones since we keep creating a new virus everytime.
-    Check Game1scene::addVirus() to see the virus related slots.
-*/
 void Game1scene::connectButtons(){
     QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(startGame()));
     QObject::connect(gameNameTimer, SIGNAL(timeout()), this, SLOT(updateGameName()));
@@ -99,9 +86,6 @@ void Game1scene::connectButtons(){
 
 }
 
-/*!
-    Resets the page and starts a new game
-*/
 void Game1scene::startGame(){
     arrow = new Arrow();
     this->addItem(arrow);
@@ -128,15 +112,60 @@ void Game1scene::startGame(){
 }
 
 
-/*!
-    Adds the semi-circle that serves as a stand to the arrow
-*/
 void Game1scene::addCircle(){
     circle = new QGraphicsPixmapItem;
     circle->setPixmap(QPixmap(":/game1images/half-circle.png").scaled(200,75));
     circle->setPos(QPointF(175,600));
     this->addItem(circle);
 
+}
+
+/*!
+    Makes gameName move up and down
+*/
+void Game1scene::updateGameName(){
+    if(gameName->y() < gameNamey){
+        gameName->setPos(gameName->x(), gameName->y() + 2);
+        if(gameName->y() >= gameNamey){
+            gameNamey = 90;
+        }
+    }
+    else if(gameName->y() > gameNamey){
+        gameName->setPos(gameName->x(), gameName->y() - 2);
+        if(gameName->y() <= gameNamey){
+            gameNamey = 130;
+        }
+    }
+}
+
+void Game1scene::updateGameOver(){
+    if(gameOver->y() < gameOvery){
+        gameOver->setPos(gameOver->x(), gameOver->y() + 2);
+        if(gameOver->y() >= gameOvery){
+            gameOvery = 90;
+        }
+    }
+    else if(gameOver->y() > gameOvery){
+        gameOver->setPos(gameOver->x(), gameOver->y() - 2);
+        if(gameOver->y() <= gameOvery){
+            gameOvery = 130;
+        }
+    }
+}
+
+void Game1scene::updateGameWon(){
+    if(gameWon->y() < gameWony){
+        gameWon->setPos(gameWon->x(), gameWon->y() + 2);
+        if(gameWon->y() >= gameWony){
+            gameWony = 90;
+        }
+    }
+    else if(gameWon->y() > gameWony){
+        gameWon->setPos(gameWon->x(), gameWon->y() - 2);
+        if(gameWon->y() <= gameWony){
+            gameWony = 130;
+        }
+    }
 }
 
 /*!
@@ -152,9 +181,7 @@ void Game1scene::displayScores(){
             res = res + QString::number(i)+",";
         }
         res.remove(res.size()-1, 1);
-        scoreHistory->setText("Your last 5 games:\n"+ res);
-
-        //highscore = (curUser->game1_highest > highscore) ? curUser->game1_highest : highscore;
+        scoreHistoryL->setText("You Score History is:\n " + res);
     }
 
     if(currentScore > highscore){
@@ -170,10 +197,6 @@ void Game1scene::displayScores(){
                            );
 }
 
-
-/*!
-    Creates a new virus and adds it to the game scene
-*/
 void Game1scene::addVirus(){
     virusLarge = new VirusLarge(nullptr, levelSpeed);
     QObject::connect(virusLarge, SIGNAL(collision()), this, SLOT(collisionVirusSyring()));
@@ -183,7 +206,7 @@ void Game1scene::addVirus(){
 }
 
 /*!
-    Slot to the collision() signal emitted by the virusLarge class
+
 */
 void Game1scene::collisionVirusSyring(){
     arrow->timerRotate->start(arrow->timerRotateSpeed);
@@ -202,14 +225,14 @@ void Game1scene::collisionVirusSyring(){
     }
 
     counter++;
-    if(counter == 2){
+    if(counter == 5){
         increaseLevel();
         counter = 0;
     }
 
     currentScoreL->setText("Score: " + QString::number(currentScore));
 
-    if(currentScore >= 10){
+    if(currentScore >= 150){
         userWon();
     }
     else{
@@ -219,16 +242,12 @@ void Game1scene::collisionVirusSyring(){
     delete arrow->syringe;
 }
 
-
-/*!
-    whenever the user reaches a score >= 150 this function signals that the user wins and ends the current game
-*/
 void Game1scene::userWon(){
     arrow->timerRotate->stop();
     arrow->timerShoot->stop();
 
+    displayScores();
     updateUserScores();
-    //displayScores(); //causing SEG FAULT
     delete arrow;
 
     this->addItem(gameWon);
@@ -240,11 +259,6 @@ void Game1scene::userWon(){
 
 }
 
-
-/*!
-  Whenever the arrow goes out of bound or when a virus leaves the boundary without being hit,
-  this function receives the failure() signal and ends the current game
-*/
 void Game1scene::userFailed(){
     arrow->timerRotate->stop();
     arrow->timerShoot->stop();
@@ -261,22 +275,14 @@ void Game1scene::userFailed(){
     startButton->setEnabled(true);
 }
 
-
-/*!
-    Edits the current User's vector of game1 scores
-*/
 void Game1scene::updateUserScores(){
     if(curUser){
         curUser->game1_scores.push_back(currentScore);
         curUser->game1_scores.removeAt(0);
+        curUser->game1_highest = highscore;
     }
 }
 
-
-/*!
-    Called whenever the user hits 5 viruses simultaneously.
-    increases the speed of rotation of arrows as well as the speed of the viruses (levelSpeed) and rolling background
-*/
 void Game1scene::increaseLevel(){
     if(levelSpeed > 10){
         levelSpeed-=10;
@@ -292,11 +298,6 @@ void Game1scene::increaseLevel(){
     }
 }
 
-/*!
-    A handler for all key events:
-    - Space -> shooting
-    - F1 -> start game
-*/
 void Game1scene::keyPressEvent(QKeyEvent * event){
     if(event->key() == Qt::Key_F1){
         if(startButton->isEnabled()){
@@ -309,93 +310,25 @@ void Game1scene::keyPressEvent(QKeyEvent * event){
 
 }
 
-/*!
-    Makes gameName label move up and down
-*/
-void Game1scene::updateGameName(){
-    if(gameName->y() < gameNamey){
-        gameName->setPos(gameName->x(), gameName->y() + 2);
-        if(gameName->y() >= gameNamey){
-            gameNamey = 90;
-        }
-    }
-    else if(gameName->y() > gameNamey){
-        gameName->setPos(gameName->x(), gameName->y() - 2);
-        if(gameName->y() <= gameNamey){
-            gameNamey = 130;
-        }
-    }
+void Game1scene::cleanPage(){
+    highscore = 0;
+    currentScore = 0;
+    countLarge = 0;
+    countSmall = 0;
+    countMedium = 0;
+
+    currentScoreL->setText("Score: " + QString::number(currentScore));
+    highscoreL->setText("Your highscore is: " + QString::number(highscore));
+    scoreHistoryL->setText("You Score History is: ");
+
+    gameNameTimer->stop();
+    gameOverTimer->stop();
+    gameWonTimer->stop();
+    this->removeItem(gameName);
+    this->removeItem(gameOver);
+    this->removeItem(gameWon);
+
+
+    this->addItem(gameName);
+    gameNameTimer->start(20);
 }
-
-
-/*!
-    Makes gameOver label move up and down
-*/
-void Game1scene::updateGameOver(){
-    if(gameOver->y() < gameOvery){
-        gameOver->setPos(gameOver->x(), gameOver->y() + 2);
-        if(gameOver->y() >= gameOvery){
-            gameOvery = 90;
-        }
-    }
-    else if(gameOver->y() > gameOvery){
-        gameOver->setPos(gameOver->x(), gameOver->y() - 2);
-        if(gameOver->y() <= gameOvery){
-            gameOvery = 130;
-        }
-    }
-}
-
-
-/*!
-    Makes gameWon label move up and down
-*/
-void Game1scene::updateGameWon(){
-    if(gameWon->y() < gameWony){
-        gameWon->setPos(gameWon->x(), gameWon->y() + 2);
-        if(gameWon->y() >= gameWony){
-            gameWony = 90;
-        }
-    }
-    else if(gameWon->y() > gameWony){
-        gameWon->setPos(gameWon->x(), gameWon->y() - 2);
-        if(gameWon->y() <= gameWony){
-            gameWony = 130;
-        }
-    }
-}
-
-///*!
-//    Resets the page before admitting a new user
-//*/
-//void Game1scene::cleanPage(){
-//    startButton->setEnabled(true);
-
-//    gameOverTimer->stop();
-//    gameWonTimer->stop();
-//    this->removeItem(gameOver);
-//    this->removeItem(gameWon);
-
-//    this->addItem(gameName);
-//    gameNameTimer->start(30);
-
-//    currentScore = 0;
-//    countLarge = countSmall = countMedium = 0;
-//    currentScoreL->setText("Score: " + QString::number(currentScore));
-
-////    if(virusLarge){
-////        delete virusLarge;
-////    }
-
-////    if(arrow){
-////        if(arrow->syringe){
-////            delete arrow->syringe;
-////        }
-////        delete arrow;
-////    }
-
-////    if(circle){
-////        delete circle;
-////    }
-//}
-

@@ -7,12 +7,13 @@
         "Hashed Password": 1884433443,
         "Last Name": "Jaber",
         "Username": "HajHaj",
+        "game1_highest": 15,
         "game1_score": [
             0,
             0,
             0,
             0,
-            0
+            15
         ],
         "game2_score": [
             0,
@@ -157,13 +158,13 @@
         "Hashed Password": -974341183,
         "Last Name": "Mattar",
         "Username": "stm",
-        "game1_highest": 0,
+        "game1_highest": 25,
         "game1_score": [
-            0,
-            0,
-            0,
-            0,
-            0
+            14,
+            10,
+            10,
+            14,
+            25
         ],
         "game2_highest": 0,
         "game2_score": [

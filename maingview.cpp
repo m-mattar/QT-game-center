@@ -94,9 +94,10 @@ void MainGView::gotoHome(){
     signuppage->curUser=NULL;
 
     if(game1scene->curUser){
-        json->updateUserScores(game1scene->curUser->username, game1scene->curUser->game1_scores, '1');
+        json->updateUserScores(game1scene->curUser->username, game1scene->curUser->game1_scores, game1scene->curUser->game1_highest, 1);
     }
 
+    game1scene->cleanPage();
     welcomewindow -> cleanPage();
     this->setScene(mainwindow);
     this->show();
@@ -116,8 +117,11 @@ void MainGView::playAsGuest(){
     - SLOT is connected only to welcome page
 */
 void MainGView:: playGame1(){
-//    game1scene = new Game1scene();
     game1scene -> curUser = welcomewindow -> curUser;
+    if(game1scene->curUser){
+        game1scene->highscore = game1scene->curUser->game1_highest;
+    }
+
     this ->setScene(game1scene);
     this ->show();
 }

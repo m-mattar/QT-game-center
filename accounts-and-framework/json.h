@@ -19,7 +19,7 @@ public:
     Util util;
     QJsonDocument getJsonDocument();
     void appendToUserDocument(QJsonObject user);
-    void updateUserScores(QString username, QVector<int> gameScores, char gameNumber);
+    void updateUserScores(QString username, QVector<int> gameScores, int highscore, int gameNumber);
     QJsonObject checkUser(QJsonArray & usersArray,QString & username,QString& password);
 
     QJsonValue EncodeImage(const QPixmap &p);
