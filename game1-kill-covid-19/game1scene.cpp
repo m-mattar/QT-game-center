@@ -37,7 +37,9 @@ Game1scene::Game1scene() {
     setScoreLabels();
 
 }
-
+/*!
+    fixes the buttons and adds them to the game Scene
+*/
 void Game1scene::fillScene(){
     homeButton->setGeometry(520, 600, 100, 30);
     this->addWidget(homeButton);
@@ -55,6 +57,9 @@ void Game1scene::fillScene(){
     gameWon->setPos(QPointF(150,100));
 }
 
+/*!
+    Fixes the score labels and adds them to the scene
+*/
 void Game1scene::setScoreLabels(){
     highscoreL->setGeometry(520, 100, 200, 30);
     highscoreL -> setWindowFlag(Qt::FramelessWindowHint); //No Frame
@@ -78,6 +83,11 @@ void Game1scene::setScoreLabels(){
     this->addWidget(scoreHistoryL);
 }
 
+
+/*!
+    Connects all slots and buttons except the virus related ones since we keep creating a new virus everytime.
+    Check Game1scene::addVirus() to see the virus related slots.
+*/
 void Game1scene::connectButtons(){
     QObject::connect(startButton, SIGNAL(clicked()), this, SLOT(startGame()));
     QObject::connect(gameNameTimer, SIGNAL(timeout()), this, SLOT(updateGameName()));
@@ -86,6 +96,9 @@ void Game1scene::connectButtons(){
 
 }
 
+/*!
+    Resets the current scores and starts a new game
+*/
 void Game1scene::startGame(){
     arrow = new Arrow();
     this->addItem(arrow);
@@ -111,7 +124,9 @@ void Game1scene::startGame(){
     addCircle();
 }
 
-
+/*!
+    Adds the semi-circle that serves as a stand to the arrow
+*/
 void Game1scene::addCircle(){
     circle = new QGraphicsPixmapItem;
     circle->setPixmap(QPixmap(":/game1images/half-circle.png").scaled(200,75));
@@ -121,7 +136,7 @@ void Game1scene::addCircle(){
 }
 
 /*!
-    Makes gameName move up and down
+    Makes gameName label move up and down
 */
 void Game1scene::updateGameName(){
     if(gameName->y() < gameNamey){
@@ -138,6 +153,10 @@ void Game1scene::updateGameName(){
     }
 }
 
+
+/*!
+    Makes gameOver label move up and down
+*/
 void Game1scene::updateGameOver(){
     if(gameOver->y() < gameOvery){
         gameOver->setPos(gameOver->x(), gameOver->y() + 2);
@@ -153,6 +172,10 @@ void Game1scene::updateGameOver(){
     }
 }
 
+
+/*!
+    Makes gameWon label move up and down
+*/
 void Game1scene::updateGameWon(){
     if(gameWon->y() < gameWony){
         gameWon->setPos(gameWon->x(), gameWon->y() + 2);
@@ -197,6 +220,9 @@ void Game1scene::displayScores(){
                            );
 }
 
+/*!
+    Creates a new virus and adds it to the game scene
+*/
 void Game1scene::addVirus(){
     virusLarge = new VirusLarge(nullptr, levelSpeed);
     QObject::connect(virusLarge, SIGNAL(collision()), this, SLOT(collisionVirusSyring()));
@@ -206,7 +232,7 @@ void Game1scene::addVirus(){
 }
 
 /*!
-
+    Slot to the collision() signal emitted by the virusLarge class
 */
 void Game1scene::collisionVirusSyring(){
     arrow->timerRotate->start(arrow->timerRotateSpeed);
@@ -242,6 +268,9 @@ void Game1scene::collisionVirusSyring(){
     delete arrow->syringe;
 }
 
+/*!
+    whenever the user reaches a score >= 150 this function signals that the user wins and ends the current game
+*/
 void Game1scene::userWon(){
     arrow->timerRotate->stop();
     arrow->timerShoot->stop();
@@ -259,6 +288,10 @@ void Game1scene::userWon(){
 
 }
 
+/*!
+  Whenever the arrow goes out of bound or when a virus leaves the boundary without being hit,
+  this function receives the failure() signal and ends the current game
+*/
 void Game1scene::userFailed(){
     arrow->timerRotate->stop();
     arrow->timerShoot->stop();
@@ -275,6 +308,9 @@ void Game1scene::userFailed(){
     startButton->setEnabled(true);
 }
 
+/*!
+    Edits the current User's vector of game1 scores as well as his highscore
+*/
 void Game1scene::updateUserScores(){
     if(curUser){
         curUser->game1_scores.push_back(currentScore);
@@ -283,6 +319,10 @@ void Game1scene::updateUserScores(){
     }
 }
 
+/*!
+    Called whenever the user hits 5 viruses.
+    increases the speed of rotation of arrows as well as the speed of the viruses (levelSpeed) and rolling background
+*/
 void Game1scene::increaseLevel(){
     if(levelSpeed > 10){
         levelSpeed-=10;
@@ -298,6 +338,11 @@ void Game1scene::increaseLevel(){
     }
 }
 
+/*!
+    A handler for all key events:
+    - Space -> shooting on a virus
+    - F1 -> start game
+*/
 void Game1scene::keyPressEvent(QKeyEvent * event){
     if(event->key() == Qt::Key_F1){
         if(startButton->isEnabled()){
@@ -310,6 +355,9 @@ void Game1scene::keyPressEvent(QKeyEvent * event){
 
 }
 
+/*!
+    Resets the page before admitting a new user
+*/
 void Game1scene::cleanPage(){
     highscore = 0;
     currentScore = 0;

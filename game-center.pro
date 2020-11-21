@@ -10,11 +10,18 @@ SOURCES += \
     accounts-and-framework/user.cpp \
     accounts-and-framework/util.cpp \
     accounts-and-framework/welcomewindow.cpp \
+    game-2-reversi/board.cpp \
+    game-2-reversi/disk.cpp \
+    game-2-reversi/game2scene.cpp \
+    game-2-reversi/line.cpp \
+    game-2-reversi/point.cpp \
+    game-2-reversi/strategy.cpp \
     game1-kill-covid-19/arrow.cpp \
     game1-kill-covid-19/game1scene.cpp \
     game1-kill-covid-19/rollingbg.cpp \
     game1-kill-covid-19/syringe.cpp \
     game1-kill-covid-19/viruslarge.cpp \
+    game2scene.cpp \
     main.cpp \
     maingview.cpp \
 
@@ -26,11 +33,18 @@ HEADERS += \
     accounts-and-framework/user.h \
     accounts-and-framework/util.h \
     accounts-and-framework/welcomewindow.h \
+    game-2-reversi/board.h \
+    game-2-reversi/disk.h \
+    game-2-reversi/game2scene.h \
+    game-2-reversi/line.h \
+    game-2-reversi/point.h \
+    game-2-reversi/strategy.h \
     game1-kill-covid-19/arrow.h \
     game1-kill-covid-19/game1scene.h \
     game1-kill-covid-19/rollingbg.h \
     game1-kill-covid-19/syringe.h \
     game1-kill-covid-19/viruslarge.h \
+    game2scene.h \
     maingview.h \
 
 DISTFILES += \

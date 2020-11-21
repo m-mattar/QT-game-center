@@ -6,6 +6,7 @@ MainGView::MainGView(){
     mainwindow = new MainWindow();
     welcomewindow = new WelcomeWindow();
     game1scene = new Game1scene();
+    //game2scene = new Game2scene();
     json = new Json();
 
     this->setScene(mainwindow);
@@ -131,5 +132,11 @@ void MainGView:: playGame1(){
     - SLOT is connected only to welcome page
 */
 void MainGView:: playGame2() {
+//    game2scene -> curUser = welcomewindow -> curUser;
+//    if(game2scene->curUser){
+//        game2scene->highscore = game2scene->curUser->game1_highest;
+//    }
 
+//    this ->setScene(game2scene);
+//    this ->show();
 }
