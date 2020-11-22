@@ -21,7 +21,6 @@ SOURCES += \
     game1-kill-covid-19/rollingbg.cpp \
     game1-kill-covid-19/syringe.cpp \
     game1-kill-covid-19/viruslarge.cpp \
-    game2scene.cpp \
     main.cpp \
     maingview.cpp \
 
@@ -44,17 +43,42 @@ HEADERS += \
     game1-kill-covid-19/rollingbg.h \
     game1-kill-covid-19/syringe.h \
     game1-kill-covid-19/viruslarge.h \
-    game2scene.h \
     maingview.h \
 
 DISTFILES += \
     JSON/jokes.json \
     JSON/users.json \
     ../../Profile.png \
+    README.md \
+    Sounds/music.mp3 \
     images/center-background.jpg \
-    images/main-background.jpg
+    images/game1icon.jpeg \
+    images/game1images/arrow.png \
+    images/game1images/bright-lavender-background.jpg \
+    images/game1images/game1Name.png \
+    images/game1images/gameOver.png \
+    images/game1images/gameWon.png \
+    images/game1images/half-circle.png \
+    images/game1images/mike.png \
+    images/game1images/syringe.png \
+    images/game1images/vessel.png \
+    images/game1images/virus-green.png \
+    images/game1images/virus-pink.png \
+    images/game1images/virus-purple.png \
+    images/game1images/white-blood-cell.png \
+    images/game2icon.jpeg \
+    images/game2images/BlackChip.png \
+    images/game2images/BlackDisk.png \
+    images/game2images/BlankChip.png \
+    images/game2images/BlankDisk.png \
+    images/game2images/Board.png \
+    images/game2images/WhiteDisk.png \
+    images/main-background.jpg \
+    images/red-background.jpg
 
 RESOURCES += \
     images/images.qrc \
     images/images.qrc \
+    images/images.qrc \
+    res.qrc \
     res.qrc

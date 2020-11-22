@@ -18,5 +18,9 @@
         <file>game1images/half-circle.png</file>
         <file>game1images/gameOver.png</file>
         <file>game1images/gameWon.png</file>
+        <file>game2images/BlackDisk.png</file>
+        <file>game2images/BlankDisk.png</file>
+        <file>game2images/Board.png</file>
+        <file>game2images/WhiteDisk.png</file>
     </qresource>
 </RCC>

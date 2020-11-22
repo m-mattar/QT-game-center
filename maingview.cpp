@@ -6,7 +6,7 @@ MainGView::MainGView(){
     mainwindow = new MainWindow();
     welcomewindow = new WelcomeWindow();
     game1scene = new Game1scene();
-    //game2scene = new Game2scene();
+    game2scene = new Game2scene();
     json = new Json();
 
     this->setScene(mainwindow);
@@ -137,6 +137,6 @@ void MainGView:: playGame2() {
 //        game2scene->highscore = game2scene->curUser->game1_highest;
 //    }
 
-//    this ->setScene(game2scene);
-//    this ->show();
+    this ->setScene(game2scene);
+    this ->show();
 }
