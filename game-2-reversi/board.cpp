@@ -8,12 +8,10 @@ Board::Board() {
             gameboard[i][j] = 0;
         }
     }
-
     gameboard[3][4] = playerBlack;
     gameboard[4][3] = playerBlack;
     gameboard[3][3] = playerWhite;
     gameboard[4][4] = playerWhite;
-
 }
 
 /*!
