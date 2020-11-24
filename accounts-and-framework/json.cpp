@@ -58,12 +58,16 @@ void Json::updateUserScores(QString username, QVector<int> gameScores, int highs
              arr.append(i);
         }
 
+        QString game = "game1";
+        if(gameNumber == 2) game = "game2";
+        else game = "game1";
+
         QJsonArray RootArray = jsonDocument.array();
         for(int i=0;i<RootArray.count();i++){
                 QJsonObject obj = RootArray.at(i).toObject();
                 if(obj["Username"].toString() == username){
-                    obj["game1_score"] = arr;
-                    obj["game1_highest"] = highscore;
+                    obj[game + "_score"] = arr;
+                    obj[game + "_highest"] = highscore;
                     RootArray.removeAt(i);
                     RootArray.insert(i,obj);
                     jsonDocument.setArray(RootArray);

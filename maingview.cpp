@@ -30,6 +30,7 @@ void MainGView::connectButtons(){
     QObject::connect(welcomewindow->game2Button, SIGNAL(clicked(bool)), this, SLOT(playGame2()));
 
     QObject::connect(game1scene->homeButton, SIGNAL(clicked(bool)), this, SLOT(gotoHome()));
+    QObject::connect(game2scene->homeButton, SIGNAL(clicked(bool)), this, SLOT(gotoHome()));
 }
 
 /*
@@ -97,7 +98,11 @@ void MainGView::gotoHome(){
     if(game1scene->curUser){
         json->updateUserScores(game1scene->curUser->username, game1scene->curUser->game1_scores, game1scene->curUser->game1_highest, 1);
     }
+    if(game2scene->curUser){
+        json->updateUserScores(game2scene->curUser->username, game2scene->curUser->game2_scores, game2scene->curUser->game2_highest, 2);
+    }
 
+    game2scene->cleanPage();
     game1scene->cleanPage();
     welcomewindow -> cleanPage();
     this->setScene(mainwindow);
@@ -132,10 +137,10 @@ void MainGView:: playGame1(){
     - SLOT is connected only to welcome page
 */
 void MainGView:: playGame2() {
-//    game2scene -> curUser = welcomewindow -> curUser;
-//    if(game2scene->curUser){
-//        game2scene->highscore = game2scene->curUser->game1_highest;
-//    }
+    game2scene -> curUser = welcomewindow -> curUser;
+    if(game2scene->curUser){
+        game2scene->highscore = game2scene->curUser->game2_highest;
+    }
 
     this ->setScene(game2scene);
     this ->show();

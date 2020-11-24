@@ -88,8 +88,8 @@ void MainWindow::fixLabels(){
 */
 QString MainWindow::getJoke(){
     srand(time(NULL));
-    const QString filePath = "/home/eece435l/Desktop/435L/project-eece435l-game-center/JSON/jokes.json";
-//    QString filePath = "/home/eece435l/Desktop/435L-Project/project-eece435l-game-center/JSON/jokes.json";
+    //const QString filePath = "/home/eece435l/Desktop/435L/project-eece435l-game-center/JSON/jokes.json";
+     const QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/jokes.json";
 //    QString filePath = "../JSON/jokes.json"; //location of the jokes JSON file
 
     QFile file(filePath);

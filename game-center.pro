@@ -72,7 +72,9 @@ DISTFILES += \
     images/game2images/BlankChip.png \
     images/game2images/BlankDisk.png \
     images/game2images/Board.png \
+    images/game2images/ReversiName.png \
     images/game2images/WhiteDisk.png \
+    images/game2images/gamename.jpeg \
     images/main-background.jpg \
     images/red-background.jpg
 
