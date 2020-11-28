@@ -1,0 +1,90 @@
+\hypertarget{classJson}{\section{Json Class Reference}
+\label{classJson}\index{Json@{Json}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-Json\-Document \hyperlink{classJson_a8f60a3a23f11ac93003d1c3e0e069dde}{get\-Json\-Document} ()
+\begin{DoxyCompactList}\small\item\em Gets the Json\-Document of the file path. \end{DoxyCompactList}\item 
+void \hyperlink{classJson_afe466a1ce0a4f747a366029db26ee9a3}{append\-To\-User\-Document} (Q\-Json\-Object user)
+\item 
+void \hyperlink{classJson_a21ad90aadf8443aab3f4a60288ee100a}{update\-User\-Scores} (Q\-String username, Q\-Vector$<$ int $>$ game\-Scores, int highscore, int game\-Number)
+\item 
+Q\-Json\-Object \hyperlink{classJson_a515ca3c26feb507e7da11cdf61ec77cd}{check\-User} (Q\-Json\-Array \&users\-Array, Q\-String \&username, Q\-String \&password)
+\item 
+Q\-Json\-Value \hyperlink{classJson_a89ce8478fc9da72e964e6aef97604ae3}{Encode\-Image} (const Q\-Pixmap \&p)
+\item 
+\hypertarget{classJson_a2586512a930bc5631183cf2b722e91eb}{Q\-Pixmap {\bfseries Decode\-Image} (Q\-Json\-Value val)}\label{classJson_a2586512a930bc5631183cf2b722e91eb}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classJson_ad637dea3aa5aa005b0b21af4bbc59328}{Q\-String {\bfseries file\-Path} = \char`\"{}/home/eece435l/Desktop/435\-L/project-\/eece435l-\/game-\/center/\-J\-S\-O\-N/users.\-json\char`\"{}}\label{classJson_ad637dea3aa5aa005b0b21af4bbc59328}
+
+\item 
+\hypertarget{classJson_ac414a8d0e58941fbe840808c32fb1879}{\hyperlink{classUtil}{Util} {\bfseries util}}\label{classJson_ac414a8d0e58941fbe840808c32fb1879}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classJson_afe466a1ce0a4f747a366029db26ee9a3}{\index{Json@{Json}!append\-To\-User\-Document@{append\-To\-User\-Document}}
+\index{append\-To\-User\-Document@{append\-To\-User\-Document}!Json@{Json}}
+\subsubsection[{append\-To\-User\-Document}]{\setlength{\rightskip}{0pt plus 5cm}void Json\-::append\-To\-User\-Document (
+\begin{DoxyParamCaption}
+\item[{Q\-Json\-Object}]{user}
+\end{DoxyParamCaption}
+)}}\label{classJson_afe466a1ce0a4f747a366029db26ee9a3}
+Takes a newly created user and appends it to the users.\-json document \hypertarget{classJson_a515ca3c26feb507e7da11cdf61ec77cd}{\index{Json@{Json}!check\-User@{check\-User}}
+\index{check\-User@{check\-User}!Json@{Json}}
+\subsubsection[{check\-User}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Json\-Object Json\-::check\-User (
+\begin{DoxyParamCaption}
+\item[{Q\-Json\-Array \&}]{users\-Array, }
+\item[{Q\-String \&}]{username, }
+\item[{Q\-String \&}]{password}
+\end{DoxyParamCaption}
+)}}\label{classJson_a515ca3c26feb507e7da11cdf61ec77cd}
+Checks if a user who attempted to login has already signed up before \begin{DoxyReturn}{Returns}
+If the login was successful, returns the user as a Q\-Json\-Object.\-Else returns an empty Q\-J\-Son\-Object 
+\end{DoxyReturn}
+\hypertarget{classJson_a89ce8478fc9da72e964e6aef97604ae3}{\index{Json@{Json}!Encode\-Image@{Encode\-Image}}
+\index{Encode\-Image@{Encode\-Image}!Json@{Json}}
+\subsubsection[{Encode\-Image}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Json\-Value Json\-::\-Encode\-Image (
+\begin{DoxyParamCaption}
+\item[{const Q\-Pixmap \&}]{p}
+\end{DoxyParamCaption}
+)}}\label{classJson_a89ce8478fc9da72e964e6aef97604ae3}
+Takes a picture, encodes it, and returns the corresponding hashed Q\-Json\-Value \begin{DoxyReturn}{Returns}
+Q\-Json\-Value for the encoded image 
+\end{DoxyReturn}
+\hypertarget{classJson_a8f60a3a23f11ac93003d1c3e0e069dde}{\index{Json@{Json}!get\-Json\-Document@{get\-Json\-Document}}
+\index{get\-Json\-Document@{get\-Json\-Document}!Json@{Json}}
+\subsubsection[{get\-Json\-Document}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Json\-Document Json\-::get\-Json\-Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classJson_a8f60a3a23f11ac93003d1c3e0e069dde}
+
+
+Gets the Json\-Document of the file path. 
+
+\begin{DoxyReturn}{Returns}
+Q\-Json\-Document of the file path 
+\end{DoxyReturn}
+\hypertarget{classJson_a21ad90aadf8443aab3f4a60288ee100a}{\index{Json@{Json}!update\-User\-Scores@{update\-User\-Scores}}
+\index{update\-User\-Scores@{update\-User\-Scores}!Json@{Json}}
+\subsubsection[{update\-User\-Scores}]{\setlength{\rightskip}{0pt plus 5cm}void Json\-::update\-User\-Scores (
+\begin{DoxyParamCaption}
+\item[{Q\-String}]{username, }
+\item[{Q\-Vector$<$ int $>$}]{game\-Scores, }
+\item[{int}]{highscore, }
+\item[{int}]{game\-Number}
+\end{DoxyParamCaption}
+)}}\label{classJson_a21ad90aadf8443aab3f4a60288ee100a}
+Update the \hyperlink{classUser}{User} Scores in the \hyperlink{classJson}{Json} object of the \hyperlink{classUser}{User} 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+accounts-\/and-\/framework/json.\-h\item 
+accounts-\/and-\/framework/json.\-cpp\end{DoxyCompactItemize}

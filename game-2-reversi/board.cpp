@@ -15,7 +15,7 @@ Board::Board() {
 }
 
 /*!
-
+	Count the number of black and white disks in the board
 */
 void Board::setScore() {
     countBlackDisks = 0;
@@ -32,6 +32,10 @@ void Board::setScore() {
     }
 }
 
+/*!
+	Checks if a User or the AI can play or not
+	\return True if they can, false if not
+*/
 bool Board::cannotPlay(int player) {
     return getChangedTiles(player).size() == 0;
 }

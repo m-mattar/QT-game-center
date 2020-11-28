@@ -17,7 +17,9 @@ Arrow::Arrow(QObject *parent) : QObject(parent) {
     timerRotate->start(timerRotateSpeed);
 }
 
-//SLOTS
+/*!
+	A function to rotate the arrow
+*/
 
 void Arrow::rotate(){
     rotationDegree = rotationDegree + direction * 2;
@@ -27,7 +29,9 @@ void Arrow::rotate(){
         direction *= -1;
     }
 }
-
+/*!
+	A function to shoot the arrow
+*/
 void Arrow::shoot(){
     if(rotationDegree > 1){
         syringe->setPos(syringe->x() + 0.6 * (rotationDegree), syringe->y() - 2 * (rotationDegree));
@@ -47,8 +51,9 @@ void Arrow::shoot(){
 }
 
 
-
-//KEY EVENTS
+/*!
+	Creates a new Syringe that gets initalized whenever a space is pressed
+*/
 void Arrow::spacePressed(){
     syringe = new Syringe();
     syringe->setPos(x(), y());

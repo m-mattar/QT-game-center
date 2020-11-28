@@ -1,0 +1,91 @@
+\hypertarget{classLoginPage}{\section{Login\-Page Class Reference}
+\label{classLoginPage}\index{Login\-Page@{Login\-Page}}
+}
+Inheritance diagram for Login\-Page\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLoginPage}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classLoginPage_a5802453d9b965f17bad2abe14d23ff1c}{login\-User} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLoginPage_ac80d4431cd7779e6ae5f8c3b17fe6c3f}{{\bfseries Login\-Page} (Q\-Widget $\ast$parent=nullptr)}\label{classLoginPage_ac80d4431cd7779e6ae5f8c3b17fe6c3f}
+
+\item 
+\hypertarget{classLoginPage_a357fad2a91f6081a2b272ed081dcb014}{void {\bfseries fill\-Scene} ()}\label{classLoginPage_a357fad2a91f6081a2b272ed081dcb014}
+
+\item 
+void \hyperlink{classLoginPage_aaa723bfc72a1ba4778e258ba088e0d7a}{fix\-Labels} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLoginPage_a1d5dd5716ef5bf6770c48433cccf2974}{\hyperlink{classJson}{Json} {\bfseries json}}\label{classLoginPage_a1d5dd5716ef5bf6770c48433cccf2974}
+
+\item 
+\hypertarget{classLoginPage_ae797db11d2d9017001a70515caa38b08}{\hyperlink{classUtil}{Util} {\bfseries util}}\label{classLoginPage_ae797db11d2d9017001a70515caa38b08}
+
+\item 
+\hypertarget{classLoginPage_a5f54635b04c4ddd892d719650fd977cc}{\hyperlink{classUser}{User} $\ast$ {\bfseries cur\-User}}\label{classLoginPage_a5f54635b04c4ddd892d719650fd977cc}
+
+\item 
+\hypertarget{classLoginPage_a3ec15c43a6e4faf5cda7317167d92721}{Q\-Label $\ast$ {\bfseries login\-Label}}\label{classLoginPage_a3ec15c43a6e4faf5cda7317167d92721}
+
+\item 
+\hypertarget{classLoginPage_a4d880e9d90adc87f1e93938de3f8f524}{Q\-Label $\ast$ {\bfseries username\-Label}}\label{classLoginPage_a4d880e9d90adc87f1e93938de3f8f524}
+
+\item 
+\hypertarget{classLoginPage_a7d701d4b695ef9c3cf7d2b7116c64427}{Q\-Label $\ast$ {\bfseries password\-Label}}\label{classLoginPage_a7d701d4b695ef9c3cf7d2b7116c64427}
+
+\item 
+\hypertarget{classLoginPage_a55a9938b20bfa6e566000bbc10843a54}{Q\-Label $\ast$ {\bfseries no\-Account\-Label}}\label{classLoginPage_a55a9938b20bfa6e566000bbc10843a54}
+
+\item 
+\hypertarget{classLoginPage_a4274ac14aa8369d3aaed3b786a760b85}{Q\-Line\-Edit $\ast$ {\bfseries username\-Line\-Edit}}\label{classLoginPage_a4274ac14aa8369d3aaed3b786a760b85}
+
+\item 
+\hypertarget{classLoginPage_a7305ba112d1457791d841285a963a04f}{Q\-Line\-Edit $\ast$ {\bfseries password\-Line\-Edit}}\label{classLoginPage_a7305ba112d1457791d841285a963a04f}
+
+\item 
+\hypertarget{classLoginPage_acfe1d737483a274558b13dddcfc67f19}{Q\-Push\-Button $\ast$ {\bfseries login\-Button}}\label{classLoginPage_acfe1d737483a274558b13dddcfc67f19}
+
+\item 
+\hypertarget{classLoginPage_aef48cad471d0aad88472bf8f703218e2}{Q\-Push\-Button $\ast$ {\bfseries signup\-Button}}\label{classLoginPage_aef48cad471d0aad88472bf8f703218e2}
+
+\item 
+\hypertarget{classLoginPage_a1411d81ae64bd5adfcbb4cff160ec4a9}{Q\-Push\-Button $\ast$ {\bfseries home\-Button}}\label{classLoginPage_a1411d81ae64bd5adfcbb4cff160ec4a9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLoginPage_aaa723bfc72a1ba4778e258ba088e0d7a}{\index{Login\-Page@{Login\-Page}!fix\-Labels@{fix\-Labels}}
+\index{fix\-Labels@{fix\-Labels}!LoginPage@{Login\-Page}}
+\subsubsection[{fix\-Labels}]{\setlength{\rightskip}{0pt plus 5cm}void Login\-Page\-::fix\-Labels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLoginPage_aaa723bfc72a1ba4778e258ba088e0d7a}
+adjusts the design of the labels (color, backround, font, ...) \hypertarget{classLoginPage_a5802453d9b965f17bad2abe14d23ff1c}{\index{Login\-Page@{Login\-Page}!login\-User@{login\-User}}
+\index{login\-User@{login\-User}!LoginPage@{Login\-Page}}
+\subsubsection[{login\-User}]{\setlength{\rightskip}{0pt plus 5cm}void Login\-Page\-::login\-User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classLoginPage_a5802453d9b965f17bad2abe14d23ff1c}
+Gets called after a user has attempted to login. using the json.\-cpp utility class\-:
+\begin{DoxyItemize}
+\item loads the users.\-json file using json.\-get\-Json\-Document()
+\item checks if the attempted login was successful using json.\-check\-User(users\-Array,username,password) if successful, the cur\-User instance gets updated to the currently logged in user else, cur\-User becomes N\-U\-L\-L 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+accounts-\/and-\/framework/loginpage.\-h\item 
+accounts-\/and-\/framework/loginpage.\-cpp\end{DoxyCompactItemize}

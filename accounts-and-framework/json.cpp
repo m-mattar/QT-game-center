@@ -1,9 +1,9 @@
 #include "json.h"
-
 Json::Json(){}
 
-/*!
-    Returns users.json as a QJsonDocument
+/**
+    \brief Gets the JsonDocument of the file path
+    \return QJsonDocument of the file path
 */
 QJsonDocument Json::getJsonDocument(){
     QFile file(filePath);
@@ -35,8 +35,7 @@ void Json::appendToUserDocument(QJsonObject user){
 
 /*!
     Checks if a user who attempted to login has already signed up before
-    if the login was successful, returns the user as a QJsonObject
-    else returns an empty QJSonObject
+   \return If the login was successful, returns the user as a QJsonObject.Else returns an empty QJSonObject
 */
 QJsonObject Json::checkUser(QJsonArray &usersArray, QString &username, QString &password){
     int hashed = util.hashPassword(password);
@@ -48,7 +47,9 @@ QJsonObject Json::checkUser(QJsonArray &usersArray, QString &username, QString &
     }
     return QJsonObject();
 }
-
+/*!
+    Update the User Scores in the Json object of the User
+*/
 void Json::updateUserScores(QString username, QVector<int> gameScores, int highscore, int gameNumber){
     QJsonDocument jsonDocument = getJsonDocument();
 
@@ -83,6 +84,7 @@ void Json::updateUserScores(QString username, QVector<int> gameScores, int highs
 
 /*!
     Takes a picture, encodes it, and returns the corresponding hashed QJsonValue
+	\return QJsonValue for the encoded image
 */
 QJsonValue Json::EncodeImage(const QPixmap &p){
     QBuffer buffer;
@@ -94,6 +96,7 @@ QJsonValue Json::EncodeImage(const QPixmap &p){
 
 /*!
     Takes a QJsonValue corresponding to a picture, decodes it, and returns the corresponding QPixmap
+    \return QJsonValue for the decoded image
 */
 QPixmap DecodeImage(QJsonValue val) {
   auto const encoded = val.toString().toLatin1();

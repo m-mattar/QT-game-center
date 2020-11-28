@@ -5,6 +5,9 @@ Game2scene::Game2scene(){
     startGame();
 }
 
+/*!
+	A function Used by the constructor to start the game and initalize the board and images
+*/
 void Game2scene::startGame(){
     timer = new QTimer(this);
     QObject::connect(timer, SIGNAL(timeout()), this, SLOT(changeTurn()));
@@ -31,7 +34,9 @@ void Game2scene::startGame(){
     changeToPlayer();
 
 }
-
+/*!
+	A function used to do the logic whenever we change the player's turn
+*/
 void Game2scene::changeToPlayer(){
      gameStatus *= -1;
      if(legalMovesCheck()){
@@ -50,11 +55,17 @@ void Game2scene::changeToPlayer(){
         changeToPlayer();
      }
 }
-
+/*!
+	Checks if the play or AI can make a move
+	\return True if they can, false if not
+*/
 bool Game2scene::legalMovesCheck(){
     return board ->cannotPlay(gameStatus);
 }
 
+/*!
+	Updates the board's pixmaps whenever a turn is finished.
+*/
 void Game2scene::updateBoard(){
     for(int i =0;i<8;i++){
         for(int j =0;j<8;j++){
@@ -72,6 +83,9 @@ void Game2scene::updateBoard(){
     }
 }
 
+/*!
+	A function used to do the logic when a game finishes.
+*/
 void Game2scene::gameOver(){
     board -> setScore();
     int white = board->countWhiteDisks;
@@ -90,11 +104,17 @@ void Game2scene::gameOver(){
     updateUserScores();
 }
 
+/*!
+	A function used to change turns between players
+*/
 void Game2scene::changeTurn(){
     timer->stop();
     changeToPlayer();
 }
 
+/*!
+	A function that updates the board whenever an input from the user is given.
+*/
 void Game2scene::cellClicked(){
     int i = rowEdit->text().toInt();
     int j = columnEdit->text().toInt();
@@ -124,13 +144,18 @@ void Game2scene::updateUserScores(){
     }
 }
 
+/*!
+	A helper function to fill the Scene
+*/
 void Game2scene::fillSceneHelper(QLabel * label, int fontSize){
     label -> setWindowFlag(Qt::FramelessWindowHint); //No Frame
     label -> setAttribute(Qt::WA_NoSystemBackground); //no background
     label -> setStyleSheet("QLabel { font-weight: bold}");
     label -> setFont(QFont("Arial", fontSize));
 }
-
+/*!
+	A function to fill the scene
+*/
 void Game2scene::fillScene(){
     boardPicture = new QGraphicsPixmapItem;
     boardPicture->setPixmap(QPixmap(":/game2images/Board.png").scaled(650, 650));
@@ -194,6 +219,9 @@ void Game2scene::fillScene(){
     QObject::connect(restartButton, SIGNAL(clicked(bool)), this, SLOT(restartGame()));
 }
 
+/*!
+	A function that cleans the page and remove items from the board when a user chooses to go back to the home page
+*/
 void Game2scene::cleanPage(){
     delete board;
     board = new Board();
@@ -210,6 +238,9 @@ void Game2scene::cleanPage(){
     startGame();
 }
 
+/*!
+	A function used to restart the game whenever the button is clicked
+*/
 void Game2scene::restartGame(){
     cleanPage();
     startGame();

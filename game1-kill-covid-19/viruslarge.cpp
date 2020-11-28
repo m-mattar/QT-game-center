@@ -41,6 +41,9 @@ VirusLarge::VirusLarge(QObject *parent, int levelSpeed): QObject(parent) {
     timer->start(timerSpeed);
 }
 
+/*!
+	A function that updates the coordinates of a virus
+*/
 void VirusLarge::update(){
     y+= 2;
     setPos(x,y);
@@ -65,6 +68,9 @@ void VirusLarge::update(){
 
 }
 
+/*!
+	A function that emits a signal whenever a collision happens with a virus
+*/
 void VirusLarge::collidedWithSyringe(){
     this->setPixmap(QPixmap(smashedPicPath).scaled(100, 100));
     QTimer * timerCollided = new QTimer(this);
@@ -78,6 +84,9 @@ void VirusLarge::collidedWithSyringe(){
     });
 }
 
+/*!
+	emit a signal whenever the syringe fails to hit the Virus - Game Over!
+*/
 void VirusLarge::userFailed(){
     timer->stop();
     emit failure();

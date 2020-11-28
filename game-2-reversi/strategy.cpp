@@ -5,6 +5,9 @@ Strategy::Strategy(int player){
     this->player = player;
 }
 
+/*!
+	A funciton used by the AI to play its strategy
+*/
 void Strategy::play(Board * board){
     Point bestMove = getBestMove(board);
     Line line(player, bestMove, board->gameboard);
@@ -15,6 +18,10 @@ void Strategy::play(Board * board){
     }
 }
 
+/*!
+	A funciton used by the play function to get the best Point to be played by the AI
+	\return The best point
+*/
 Point Strategy::getBestMove(Board * board) {
     int bestMoveCount = 0;
     Point bestMove = Point(0, 0);

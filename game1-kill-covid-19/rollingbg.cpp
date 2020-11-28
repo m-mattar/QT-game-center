@@ -24,6 +24,9 @@ RollingBg::RollingBg(QWidget *parent)
 
 RollingBg::~RollingBg(){}
 
+/*!
+	A function to create a QPainter and draw on it	
+*/
 void RollingBg::paintEvent(QPaintEvent*){
     QPainter p(this);
     p.drawPixmap(0, 0, background, 0, height - offset, width, height);

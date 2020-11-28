@@ -72,6 +72,9 @@ void WelcomeWindow::updateProfilePic(){
     }
 }
 
+/*!
+	Function used to fix Labels - For readability
+*/
 void WelcomeWindow:: fixLabels(){
     helloLabel -> setWindowFlag(Qt::FramelessWindowHint); //No Frame
     helloLabel -> setAttribute(Qt::WA_NoSystemBackground); //no background
@@ -97,6 +100,9 @@ void WelcomeWindow:: fixLabels(){
 
 }
 
+/*!
+	Function Used to fill the Scene - For readability
+*/
 void WelcomeWindow:: fillScene(){
     this -> addWidget(helloLabel);
 

@@ -1,0 +1,137 @@
+\hypertarget{classUser}{\section{User Class Reference}
+\label{classUser}\index{User@{User}}
+}
+Inheritance diagram for User\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classUser}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classUser_ae90821c4c8cc9a5a370f0ad6157adcc1}{{\bfseries User} (Q\-Object $\ast$parent=nullptr)}\label{classUser_ae90821c4c8cc9a5a370f0ad6157adcc1}
+
+\item 
+\hyperlink{classUser_a46c2dbdb8006a8752de309a81694a15b}{User} (Q\-Json\-Object user\-Json)
+\item 
+\hypertarget{classUser_ab12a51628183409d7ca7254fc67d7fbf}{void {\bfseries read} (const Q\-Json\-Object \&json)}\label{classUser_ab12a51628183409d7ca7254fc67d7fbf}
+
+\item 
+\hypertarget{classUser_a5a31456667d33c587e92aa0978612cac}{void {\bfseries write} (Q\-Json\-Object \&json) const }\label{classUser_a5a31456667d33c587e92aa0978612cac}
+
+\item 
+bool \hyperlink{classUser_a9e1fe4ac5c94a98f82ca09fa0982e029}{is\-Unique} ()
+\item 
+bool \hyperlink{classUser_a7fff50444765760051f4ae6fb3d58e16}{is\-Valid} ()
+\item 
+Q\-Json\-Object \hyperlink{classUser_aad36c436bfe69348e114fd922f9597ba}{to\-Json\-Object} ()
+\item 
+Q\-Json\-Array \hyperlink{classUser_a66d5ee177223841933f3907bf9a8362b}{get\-Scores\-As\-Json} (Q\-Vector$<$ int $>$ \&scores)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classUser_ab0ffba62281ba773094d3f7e9cb1b861}{\hyperlink{classJson}{Json} {\bfseries json}}\label{classUser_ab0ffba62281ba773094d3f7e9cb1b861}
+
+\item 
+\hypertarget{classUser_aed78465b35175ff33ab3ca3ca1ebe450}{Q\-String {\bfseries first\-Name}}\label{classUser_aed78465b35175ff33ab3ca3ca1ebe450}
+
+\item 
+\hypertarget{classUser_a3a225093bbb405dab285e74e24cef7c5}{Q\-String {\bfseries last\-Name}}\label{classUser_a3a225093bbb405dab285e74e24cef7c5}
+
+\item 
+\hypertarget{classUser_ae7cf3e04e6aba46f20af4c6802630074}{Q\-String {\bfseries gender}}\label{classUser_ae7cf3e04e6aba46f20af4c6802630074}
+
+\item 
+\hypertarget{classUser_ae4202de2b7974e92a55b913d20b03833}{Q\-String {\bfseries username}}\label{classUser_ae4202de2b7974e92a55b913d20b03833}
+
+\item 
+\hypertarget{classUser_acdd1a26c7a5fa4d241af640e3ff00c37}{Q\-String {\bfseries date\-Of\-Birth}}\label{classUser_acdd1a26c7a5fa4d241af640e3ff00c37}
+
+\item 
+\hypertarget{classUser_a1a118876605a4a27e37b4a9ececded5a}{Q\-Json\-Value {\bfseries picture}}\label{classUser_a1a118876605a4a27e37b4a9ececded5a}
+
+\item 
+\hypertarget{classUser_a0c6d93f685111e10b940e7e96dbac6a6}{int {\bfseries hashedpassword}}\label{classUser_a0c6d93f685111e10b940e7e96dbac6a6}
+
+\item 
+\hypertarget{classUser_aa5829689588d1f982e1a69b73bd68655}{int {\bfseries age}}\label{classUser_aa5829689588d1f982e1a69b73bd68655}
+
+\item 
+\hypertarget{classUser_aa2de22213dd79246b98e22e6d92def88}{int {\bfseries game1\-\_\-highest} = 0}\label{classUser_aa2de22213dd79246b98e22e6d92def88}
+
+\item 
+\hypertarget{classUser_a17a375d0735e08067c33b0e5bd39e55c}{int {\bfseries game2\-\_\-highest} = 0}\label{classUser_a17a375d0735e08067c33b0e5bd39e55c}
+
+\item 
+\hypertarget{classUser_a6337f4e2388a6eb3322940662db8ff45}{Q\-Vector$<$ int $>$ {\bfseries game1\-\_\-scores} = \{0,0,0,0,0\}}\label{classUser_a6337f4e2388a6eb3322940662db8ff45}
+
+\item 
+\hypertarget{classUser_a1b527baf64748d4a8d94c88c0e1632af}{Q\-Vector$<$ int $>$ {\bfseries game2\-\_\-scores} = \{0,0,0,0,0\}}\label{classUser_a1b527baf64748d4a8d94c88c0e1632af}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classUser_a46c2dbdb8006a8752de309a81694a15b}{\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\subsubsection[{User}]{\setlength{\rightskip}{0pt plus 5cm}User\-::\-User (
+\begin{DoxyParamCaption}
+\item[{Q\-Json\-Object}]{result}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classUser_a46c2dbdb8006a8752de309a81694a15b}
+Gets the \hyperlink{classUser}{User} from a Q\-Json\-Object
+
+\begin{DoxyReturn}{Returns}
+a user from the users.\-json 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classUser_a66d5ee177223841933f3907bf9a8362b}{\index{User@{User}!get\-Scores\-As\-Json@{get\-Scores\-As\-Json}}
+\index{get\-Scores\-As\-Json@{get\-Scores\-As\-Json}!User@{User}}
+\subsubsection[{get\-Scores\-As\-Json}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Json\-Array User\-::get\-Scores\-As\-Json (
+\begin{DoxyParamCaption}
+\item[{Q\-Vector$<$ int $>$ \&}]{scores}
+\end{DoxyParamCaption}
+)}}\label{classUser_a66d5ee177223841933f3907bf9a8362b}
+Transforms a vector of scores to Q\-Json\-Array \begin{DoxyReturn}{Returns}
+Q\-Json\-Array of scores 
+\end{DoxyReturn}
+\hypertarget{classUser_a9e1fe4ac5c94a98f82ca09fa0982e029}{\index{User@{User}!is\-Unique@{is\-Unique}}
+\index{is\-Unique@{is\-Unique}!User@{User}}
+\subsubsection[{is\-Unique}]{\setlength{\rightskip}{0pt plus 5cm}bool User\-::is\-Unique (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classUser_a9e1fe4ac5c94a98f82ca09fa0982e029}
+Checks whether a \hyperlink{classUser}{User} is unique or not \begin{DoxyReturn}{Returns}
+True if unique, False otherwise. 
+\end{DoxyReturn}
+\hypertarget{classUser_a7fff50444765760051f4ae6fb3d58e16}{\index{User@{User}!is\-Valid@{is\-Valid}}
+\index{is\-Valid@{is\-Valid}!User@{User}}
+\subsubsection[{is\-Valid}]{\setlength{\rightskip}{0pt plus 5cm}bool User\-::is\-Valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classUser_a7fff50444765760051f4ae6fb3d58e16}
+Checks whether \hyperlink{classUser}{User}'s input is valid \begin{DoxyReturn}{Returns}
+true if valid, false otherwise. 
+\end{DoxyReturn}
+\hypertarget{classUser_aad36c436bfe69348e114fd922f9597ba}{\index{User@{User}!to\-Json\-Object@{to\-Json\-Object}}
+\index{to\-Json\-Object@{to\-Json\-Object}!User@{User}}
+\subsubsection[{to\-Json\-Object}]{\setlength{\rightskip}{0pt plus 5cm}Q\-Json\-Object User\-::to\-Json\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classUser_aad36c436bfe69348e114fd922f9597ba}
+Transforms a \hyperlink{classUser}{User} to a Q\-Json\-Object \begin{DoxyReturn}{Returns}
+Corresponding Q\-Json\-Object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+accounts-\/and-\/framework/user.\-h\item 
+accounts-\/and-\/framework/user.\-cpp\end{DoxyCompactItemize}

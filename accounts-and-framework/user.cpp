@@ -5,7 +5,9 @@ User::User(QObject *parent) : QObject(parent) {
 }
 
 /*!
-    Returns a user from the users.json
+    Gets the User from a QJsonObject 
+
+    \return a user from the users.json
 */
 User::User(QJsonObject result){
     firstName = result["First Name"].toString();
@@ -40,6 +42,10 @@ User::User(QJsonObject result){
     game2_scores = v2;
 }
 
+/*!
+	Transforms a User to a QJsonObject
+	\return Corresponding QJsonObject
+*/
 QJsonObject User::toJsonObject(){
     QJsonObject result;
     result["First Name"] = firstName;
@@ -57,6 +63,10 @@ QJsonObject User::toJsonObject(){
     return result;
 }
 
+/*!
+	Checks whether a User is unique or not
+	\return True if unique, False otherwise.
+*/
 bool User::isUnique(){
     QJsonDocument jsonDocument = json.getJsonDocument();
     QJsonArray usersArray = jsonDocument.array();
@@ -66,6 +76,10 @@ bool User::isUnique(){
     return true;
 }
 
+/*!
+	Checks whether User's input is valid
+	\return true if valid, false otherwise.
+*/
 bool User::isValid(){
 
     if(
@@ -78,6 +92,10 @@ bool User::isValid(){
     return true;
 }
 
+/*!
+	Transforms a vector of scores to QJsonArray
+	\return QJsonArray of scores
+*/
 QJsonArray User::getScoresAsJson(QVector<int>& scores){
     QJsonArray res;
     for (int i: scores) {

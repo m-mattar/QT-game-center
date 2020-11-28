@@ -84,7 +84,8 @@ SignupPage::SignupPage(QWidget *parent) : QWidget(parent) {
 /*!
     called from the setUser() SLOT
     Reads the input from the widgets and attemps to create a new user
-    if successful, returns the new user (not yet added to users.json)
+
+    \return if successful, returns the new user (not yet added to users.json)
     else, returns NULL
 */
 User* SignupPage::createUser(){

@@ -6,15 +6,12 @@
 
 #include "util.h"
 
-/*
-This class acts as a utility wrapper to all functions related to accounts and JSON files
-*/
 class Json{
 public:
     Json();
 
-    //QString filePath = "/home/eece435l/Desktop/435L/project-eece435l-game-center/JSON/users.json";
-    QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/users.json";
+    QString filePath = "/home/eece435l/Desktop/435L/project-eece435l-game-center/JSON/users.json";
+    //QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/users.json";
     //QString filePath = "../JSON/users.json";
     Util util;
     QJsonDocument getJsonDocument();

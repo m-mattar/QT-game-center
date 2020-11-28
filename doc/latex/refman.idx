@@ -1,0 +1,154 @@
+\indexentry{Arrow@{Arrow}|hyperpage}{5}
+\indexentry{Arrow@{Arrow}!rotate@{rotate}|hyperpage}{6}
+\indexentry{rotate@{rotate}!Arrow@{Arrow}|hyperpage}{6}
+\indexentry{Arrow@{Arrow}!shoot@{shoot}|hyperpage}{6}
+\indexentry{shoot@{shoot}!Arrow@{Arrow}|hyperpage}{6}
+\indexentry{Arrow@{Arrow}!space\discretionary {-}{}{}Pressed@{space\discretionary {-}{}{}Pressed}|hyperpage}{6}
+\indexentry{space\discretionary {-}{}{}Pressed@{space\discretionary {-}{}{}Pressed}!Arrow@{Arrow}|hyperpage}{6}
+\indexentry{Board@{Board}|hyperpage}{6}
+\indexentry{Board@{Board}!cannot\discretionary {-}{}{}Play@{cannot\discretionary {-}{}{}Play}|hyperpage}{6}
+\indexentry{cannot\discretionary {-}{}{}Play@{cannot\discretionary {-}{}{}Play}!Board@{Board}|hyperpage}{6}
+\indexentry{Board@{Board}!set\discretionary {-}{}{}Score@{set\discretionary {-}{}{}Score}|hyperpage}{6}
+\indexentry{set\discretionary {-}{}{}Score@{set\discretionary {-}{}{}Score}!Board@{Board}|hyperpage}{6}
+\indexentry{Disk@{Disk}|hyperpage}{7}
+\indexentry{Game1scene@{Game1scene}|hyperpage}{7}
+\indexentry{Game1scene@{Game1scene}!add\discretionary {-}{}{}Circle@{add\discretionary {-}{}{}Circle}|hyperpage}{8}
+\indexentry{add\discretionary {-}{}{}Circle@{add\discretionary {-}{}{}Circle}!Game1scene@{Game1scene}|hyperpage}{8}
+\indexentry{Game1scene@{Game1scene}!add\discretionary {-}{}{}Virus@{add\discretionary {-}{}{}Virus}|hyperpage}{8}
+\indexentry{add\discretionary {-}{}{}Virus@{add\discretionary {-}{}{}Virus}!Game1scene@{Game1scene}|hyperpage}{8}
+\indexentry{Game1scene@{Game1scene}!clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}|hyperpage}{8}
+\indexentry{clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}!Game1scene@{Game1scene}|hyperpage}{8}
+\indexentry{Game1scene@{Game1scene}!collision\discretionary {-}{}{}Virus\discretionary {-}{}{}Syring@{collision\discretionary {-}{}{}Virus\discretionary {-}{}{}Syring}|hyperpage}{9}
+\indexentry{collision\discretionary {-}{}{}Virus\discretionary {-}{}{}Syring@{collision\discretionary {-}{}{}Virus\discretionary {-}{}{}Syring}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!connect\discretionary {-}{}{}Buttons@{connect\discretionary {-}{}{}Buttons}|hyperpage}{9}
+\indexentry{connect\discretionary {-}{}{}Buttons@{connect\discretionary {-}{}{}Buttons}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!display\discretionary {-}{}{}Scores@{display\discretionary {-}{}{}Scores}|hyperpage}{9}
+\indexentry{display\discretionary {-}{}{}Scores@{display\discretionary {-}{}{}Scores}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!fill\discretionary {-}{}{}Scene@{fill\discretionary {-}{}{}Scene}|hyperpage}{9}
+\indexentry{fill\discretionary {-}{}{}Scene@{fill\discretionary {-}{}{}Scene}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!increase\discretionary {-}{}{}Level@{increase\discretionary {-}{}{}Level}|hyperpage}{9}
+\indexentry{increase\discretionary {-}{}{}Level@{increase\discretionary {-}{}{}Level}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!set\discretionary {-}{}{}Score\discretionary {-}{}{}Labels@{set\discretionary {-}{}{}Score\discretionary {-}{}{}Labels}|hyperpage}{9}
+\indexentry{set\discretionary {-}{}{}Score\discretionary {-}{}{}Labels@{set\discretionary {-}{}{}Score\discretionary {-}{}{}Labels}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!start\discretionary {-}{}{}Game@{start\discretionary {-}{}{}Game}|hyperpage}{9}
+\indexentry{start\discretionary {-}{}{}Game@{start\discretionary {-}{}{}Game}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!update\discretionary {-}{}{}Game\discretionary {-}{}{}Name@{update\discretionary {-}{}{}Game\discretionary {-}{}{}Name}|hyperpage}{9}
+\indexentry{update\discretionary {-}{}{}Game\discretionary {-}{}{}Name@{update\discretionary {-}{}{}Game\discretionary {-}{}{}Name}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!update\discretionary {-}{}{}Game\discretionary {-}{}{}Over@{update\discretionary {-}{}{}Game\discretionary {-}{}{}Over}|hyperpage}{9}
+\indexentry{update\discretionary {-}{}{}Game\discretionary {-}{}{}Over@{update\discretionary {-}{}{}Game\discretionary {-}{}{}Over}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!update\discretionary {-}{}{}Game\discretionary {-}{}{}Won@{update\discretionary {-}{}{}Game\discretionary {-}{}{}Won}|hyperpage}{9}
+\indexentry{update\discretionary {-}{}{}Game\discretionary {-}{}{}Won@{update\discretionary {-}{}{}Game\discretionary {-}{}{}Won}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!update\discretionary {-}{}{}User\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores}|hyperpage}{9}
+\indexentry{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!user\discretionary {-}{}{}Failed@{user\discretionary {-}{}{}Failed}|hyperpage}{9}
+\indexentry{user\discretionary {-}{}{}Failed@{user\discretionary {-}{}{}Failed}!Game1scene@{Game1scene}|hyperpage}{9}
+\indexentry{Game1scene@{Game1scene}!user\discretionary {-}{}{}Won@{user\discretionary {-}{}{}Won}|hyperpage}{10}
+\indexentry{user\discretionary {-}{}{}Won@{user\discretionary {-}{}{}Won}!Game1scene@{Game1scene}|hyperpage}{10}
+\indexentry{Game2scene@{Game2scene}|hyperpage}{10}
+\indexentry{Game2scene@{Game2scene}!cell\discretionary {-}{}{}Clicked@{cell\discretionary {-}{}{}Clicked}|hyperpage}{11}
+\indexentry{cell\discretionary {-}{}{}Clicked@{cell\discretionary {-}{}{}Clicked}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!change\discretionary {-}{}{}To\discretionary {-}{}{}Player@{change\discretionary {-}{}{}To\discretionary {-}{}{}Player}|hyperpage}{11}
+\indexentry{change\discretionary {-}{}{}To\discretionary {-}{}{}Player@{change\discretionary {-}{}{}To\discretionary {-}{}{}Player}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!change\discretionary {-}{}{}Turn@{change\discretionary {-}{}{}Turn}|hyperpage}{11}
+\indexentry{change\discretionary {-}{}{}Turn@{change\discretionary {-}{}{}Turn}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}|hyperpage}{11}
+\indexentry{clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!fill\discretionary {-}{}{}Scene@{fill\discretionary {-}{}{}Scene}|hyperpage}{11}
+\indexentry{fill\discretionary {-}{}{}Scene@{fill\discretionary {-}{}{}Scene}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!fill\discretionary {-}{}{}Scene\discretionary {-}{}{}Helper@{fill\discretionary {-}{}{}Scene\discretionary {-}{}{}Helper}|hyperpage}{11}
+\indexentry{fill\discretionary {-}{}{}Scene\discretionary {-}{}{}Helper@{fill\discretionary {-}{}{}Scene\discretionary {-}{}{}Helper}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!game\discretionary {-}{}{}Over@{game\discretionary {-}{}{}Over}|hyperpage}{11}
+\indexentry{game\discretionary {-}{}{}Over@{game\discretionary {-}{}{}Over}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!legal\discretionary {-}{}{}Moves\discretionary {-}{}{}Check@{legal\discretionary {-}{}{}Moves\discretionary {-}{}{}Check}|hyperpage}{11}
+\indexentry{legal\discretionary {-}{}{}Moves\discretionary {-}{}{}Check@{legal\discretionary {-}{}{}Moves\discretionary {-}{}{}Check}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!restart\discretionary {-}{}{}Game@{restart\discretionary {-}{}{}Game}|hyperpage}{11}
+\indexentry{restart\discretionary {-}{}{}Game@{restart\discretionary {-}{}{}Game}!Game2scene@{Game2scene}|hyperpage}{11}
+\indexentry{Game2scene@{Game2scene}!start\discretionary {-}{}{}Game@{start\discretionary {-}{}{}Game}|hyperpage}{12}
+\indexentry{start\discretionary {-}{}{}Game@{start\discretionary {-}{}{}Game}!Game2scene@{Game2scene}|hyperpage}{12}
+\indexentry{Game2scene@{Game2scene}!update\discretionary {-}{}{}Board@{update\discretionary {-}{}{}Board}|hyperpage}{12}
+\indexentry{update\discretionary {-}{}{}Board@{update\discretionary {-}{}{}Board}!Game2scene@{Game2scene}|hyperpage}{12}
+\indexentry{Game2scene@{Game2scene}!update\discretionary {-}{}{}User\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores}|hyperpage}{12}
+\indexentry{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores}!Game2scene@{Game2scene}|hyperpage}{12}
+\indexentry{Json@{Json}|hyperpage}{12}
+\indexentry{Json@{Json}!append\discretionary {-}{}{}To\discretionary {-}{}{}User\discretionary {-}{}{}Document@{append\discretionary {-}{}{}To\discretionary {-}{}{}User\discretionary {-}{}{}Document}|hyperpage}{12}
+\indexentry{append\discretionary {-}{}{}To\discretionary {-}{}{}User\discretionary {-}{}{}Document@{append\discretionary {-}{}{}To\discretionary {-}{}{}User\discretionary {-}{}{}Document}!Json@{Json}|hyperpage}{12}
+\indexentry{Json@{Json}!check\discretionary {-}{}{}User@{check\discretionary {-}{}{}User}|hyperpage}{12}
+\indexentry{check\discretionary {-}{}{}User@{check\discretionary {-}{}{}User}!Json@{Json}|hyperpage}{12}
+\indexentry{Json@{Json}!Encode\discretionary {-}{}{}Image@{Encode\discretionary {-}{}{}Image}|hyperpage}{12}
+\indexentry{Encode\discretionary {-}{}{}Image@{Encode\discretionary {-}{}{}Image}!Json@{Json}|hyperpage}{12}
+\indexentry{Json@{Json}!get\discretionary {-}{}{}Json\discretionary {-}{}{}Document@{get\discretionary {-}{}{}Json\discretionary {-}{}{}Document}|hyperpage}{13}
+\indexentry{get\discretionary {-}{}{}Json\discretionary {-}{}{}Document@{get\discretionary {-}{}{}Json\discretionary {-}{}{}Document}!Json@{Json}|hyperpage}{13}
+\indexentry{Json@{Json}!update\discretionary {-}{}{}User\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores}|hyperpage}{13}
+\indexentry{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}User\discretionary {-}{}{}Scores}!Json@{Json}|hyperpage}{13}
+\indexentry{Line@{Line}|hyperpage}{13}
+\indexentry{Line@{Line}!check\discretionary {-}{}{}Line@{check\discretionary {-}{}{}Line}|hyperpage}{13}
+\indexentry{check\discretionary {-}{}{}Line@{check\discretionary {-}{}{}Line}!Line@{Line}|hyperpage}{13}
+\indexentry{Line@{Line}!get\discretionary {-}{}{}Changed\discretionary {-}{}{}Tiles@{get\discretionary {-}{}{}Changed\discretionary {-}{}{}Tiles}|hyperpage}{13}
+\indexentry{get\discretionary {-}{}{}Changed\discretionary {-}{}{}Tiles@{get\discretionary {-}{}{}Changed\discretionary {-}{}{}Tiles}!Line@{Line}|hyperpage}{13}
+\indexentry{Login\discretionary {-}{}{}Page@{Login\discretionary {-}{}{}Page}|hyperpage}{14}
+\indexentry{Login\discretionary {-}{}{}Page@{Login\discretionary {-}{}{}Page}!fix\discretionary {-}{}{}Labels@{fix\discretionary {-}{}{}Labels}|hyperpage}{14}
+\indexentry{fix\discretionary {-}{}{}Labels@{fix\discretionary {-}{}{}Labels}!LoginPage@{Login\discretionary {-}{}{}Page}|hyperpage}{14}
+\indexentry{Login\discretionary {-}{}{}Page@{Login\discretionary {-}{}{}Page}!login\discretionary {-}{}{}User@{login\discretionary {-}{}{}User}|hyperpage}{14}
+\indexentry{login\discretionary {-}{}{}User@{login\discretionary {-}{}{}User}!LoginPage@{Login\discretionary {-}{}{}Page}|hyperpage}{14}
+\indexentry{Main\discretionary {-}{}{}Window@{Main\discretionary {-}{}{}Window}|hyperpage}{15}
+\indexentry{Main\discretionary {-}{}{}Window@{Main\discretionary {-}{}{}Window}!get\discretionary {-}{}{}Joke@{get\discretionary {-}{}{}Joke}|hyperpage}{15}
+\indexentry{get\discretionary {-}{}{}Joke@{get\discretionary {-}{}{}Joke}!MainWindow@{Main\discretionary {-}{}{}Window}|hyperpage}{15}
+\indexentry{Main\discretionary {-}{}{}Window@{Main\discretionary {-}{}{}Window}!play\discretionary {-}{}{}Music@{play\discretionary {-}{}{}Music}|hyperpage}{15}
+\indexentry{play\discretionary {-}{}{}Music@{play\discretionary {-}{}{}Music}!MainWindow@{Main\discretionary {-}{}{}Window}|hyperpage}{15}
+\indexentry{Point@{Point}|hyperpage}{16}
+\indexentry{Rolling\discretionary {-}{}{}Bg@{Rolling\discretionary {-}{}{}Bg}|hyperpage}{16}
+\indexentry{Rolling\discretionary {-}{}{}Bg@{Rolling\discretionary {-}{}{}Bg}!paint\discretionary {-}{}{}Event@{paint\discretionary {-}{}{}Event}|hyperpage}{17}
+\indexentry{paint\discretionary {-}{}{}Event@{paint\discretionary {-}{}{}Event}!RollingBg@{Rolling\discretionary {-}{}{}Bg}|hyperpage}{17}
+\indexentry{Signup\discretionary {-}{}{}Page@{Signup\discretionary {-}{}{}Page}|hyperpage}{17}
+\indexentry{Signup\discretionary {-}{}{}Page@{Signup\discretionary {-}{}{}Page}!clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}|hyperpage}{18}
+\indexentry{clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}!SignupPage@{Signup\discretionary {-}{}{}Page}|hyperpage}{18}
+\indexentry{Signup\discretionary {-}{}{}Page@{Signup\discretionary {-}{}{}Page}!create\discretionary {-}{}{}User@{create\discretionary {-}{}{}User}|hyperpage}{18}
+\indexentry{create\discretionary {-}{}{}User@{create\discretionary {-}{}{}User}!SignupPage@{Signup\discretionary {-}{}{}Page}|hyperpage}{18}
+\indexentry{Signup\discretionary {-}{}{}Page@{Signup\discretionary {-}{}{}Page}!select\discretionary {-}{}{}Image@{select\discretionary {-}{}{}Image}|hyperpage}{18}
+\indexentry{select\discretionary {-}{}{}Image@{select\discretionary {-}{}{}Image}!SignupPage@{Signup\discretionary {-}{}{}Page}|hyperpage}{18}
+\indexentry{Signup\discretionary {-}{}{}Page@{Signup\discretionary {-}{}{}Page}!set\discretionary {-}{}{}User@{set\discretionary {-}{}{}User}|hyperpage}{18}
+\indexentry{set\discretionary {-}{}{}User@{set\discretionary {-}{}{}User}!SignupPage@{Signup\discretionary {-}{}{}Page}|hyperpage}{18}
+\indexentry{Strategy@{Strategy}|hyperpage}{18}
+\indexentry{Strategy@{Strategy}!play@{play}|hyperpage}{18}
+\indexentry{play@{play}!Strategy@{Strategy}|hyperpage}{18}
+\indexentry{Syringe@{Syringe}|hyperpage}{19}
+\indexentry{User@{User}|hyperpage}{19}
+\indexentry{User@{User}!User@{User}|hyperpage}{20}
+\indexentry{User@{User}!User@{User}|hyperpage}{20}
+\indexentry{User@{User}!get\discretionary {-}{}{}Scores\discretionary {-}{}{}As\discretionary {-}{}{}Json@{get\discretionary {-}{}{}Scores\discretionary {-}{}{}As\discretionary {-}{}{}Json}|hyperpage}{20}
+\indexentry{get\discretionary {-}{}{}Scores\discretionary {-}{}{}As\discretionary {-}{}{}Json@{get\discretionary {-}{}{}Scores\discretionary {-}{}{}As\discretionary {-}{}{}Json}!User@{User}|hyperpage}{20}
+\indexentry{User@{User}!is\discretionary {-}{}{}Unique@{is\discretionary {-}{}{}Unique}|hyperpage}{20}
+\indexentry{is\discretionary {-}{}{}Unique@{is\discretionary {-}{}{}Unique}!User@{User}|hyperpage}{20}
+\indexentry{User@{User}!is\discretionary {-}{}{}Valid@{is\discretionary {-}{}{}Valid}|hyperpage}{20}
+\indexentry{is\discretionary {-}{}{}Valid@{is\discretionary {-}{}{}Valid}!User@{User}|hyperpage}{20}
+\indexentry{User@{User}!to\discretionary {-}{}{}Json\discretionary {-}{}{}Object@{to\discretionary {-}{}{}Json\discretionary {-}{}{}Object}|hyperpage}{20}
+\indexentry{to\discretionary {-}{}{}Json\discretionary {-}{}{}Object@{to\discretionary {-}{}{}Json\discretionary {-}{}{}Object}!User@{User}|hyperpage}{20}
+\indexentry{Util@{Util}|hyperpage}{21}
+\indexentry{Util@{Util}!check\discretionary {-}{}{}Password@{check\discretionary {-}{}{}Password}|hyperpage}{21}
+\indexentry{check\discretionary {-}{}{}Password@{check\discretionary {-}{}{}Password}!Util@{Util}|hyperpage}{21}
+\indexentry{Util@{Util}!hash\discretionary {-}{}{}Password@{hash\discretionary {-}{}{}Password}|hyperpage}{21}
+\indexentry{hash\discretionary {-}{}{}Password@{hash\discretionary {-}{}{}Password}!Util@{Util}|hyperpage}{21}
+\indexentry{Virus\discretionary {-}{}{}Large@{Virus\discretionary {-}{}{}Large}|hyperpage}{21}
+\indexentry{Virus\discretionary {-}{}{}Large@{Virus\discretionary {-}{}{}Large}!collided\discretionary {-}{}{}With\discretionary {-}{}{}Syringe@{collided\discretionary {-}{}{}With\discretionary {-}{}{}Syringe}|hyperpage}{22}
+\indexentry{collided\discretionary {-}{}{}With\discretionary {-}{}{}Syringe@{collided\discretionary {-}{}{}With\discretionary {-}{}{}Syringe}!VirusLarge@{Virus\discretionary {-}{}{}Large}|hyperpage}{22}
+\indexentry{Virus\discretionary {-}{}{}Large@{Virus\discretionary {-}{}{}Large}!update@{update}|hyperpage}{22}
+\indexentry{update@{update}!VirusLarge@{Virus\discretionary {-}{}{}Large}|hyperpage}{22}
+\indexentry{Virus\discretionary {-}{}{}Large@{Virus\discretionary {-}{}{}Large}!user\discretionary {-}{}{}Failed@{user\discretionary {-}{}{}Failed}|hyperpage}{22}
+\indexentry{user\discretionary {-}{}{}Failed@{user\discretionary {-}{}{}Failed}!VirusLarge@{Virus\discretionary {-}{}{}Large}|hyperpage}{22}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}|hyperpage}{23}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!check\discretionary {-}{}{}Bday@{check\discretionary {-}{}{}Bday}|hyperpage}{23}
+\indexentry{check\discretionary {-}{}{}Bday@{check\discretionary {-}{}{}Bday}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{23}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}|hyperpage}{23}
+\indexentry{clean\discretionary {-}{}{}Page@{clean\discretionary {-}{}{}Page}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{23}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!fill\discretionary {-}{}{}Scene@{fill\discretionary {-}{}{}Scene}|hyperpage}{23}
+\indexentry{fill\discretionary {-}{}{}Scene@{fill\discretionary {-}{}{}Scene}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{23}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!fix\discretionary {-}{}{}Labels@{fix\discretionary {-}{}{}Labels}|hyperpage}{23}
+\indexentry{fix\discretionary {-}{}{}Labels@{fix\discretionary {-}{}{}Labels}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{23}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!fix\discretionary {-}{}{}Pixmap\discretionary {-}{}{}Items@{fix\discretionary {-}{}{}Pixmap\discretionary {-}{}{}Items}|hyperpage}{24}
+\indexentry{fix\discretionary {-}{}{}Pixmap\discretionary {-}{}{}Items@{fix\discretionary {-}{}{}Pixmap\discretionary {-}{}{}Items}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{24}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!fix\discretionary {-}{}{}Widgets@{fix\discretionary {-}{}{}Widgets}|hyperpage}{24}
+\indexentry{fix\discretionary {-}{}{}Widgets@{fix\discretionary {-}{}{}Widgets}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{24}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!update\discretionary {-}{}{}Profile\discretionary {-}{}{}Pic@{update\discretionary {-}{}{}Profile\discretionary {-}{}{}Pic}|hyperpage}{24}
+\indexentry{update\discretionary {-}{}{}Profile\discretionary {-}{}{}Pic@{update\discretionary {-}{}{}Profile\discretionary {-}{}{}Pic}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{24}
+\indexentry{Welcome\discretionary {-}{}{}Window@{Welcome\discretionary {-}{}{}Window}!update\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}Scores}|hyperpage}{24}
+\indexentry{update\discretionary {-}{}{}Scores@{update\discretionary {-}{}{}Scores}!WelcomeWindow@{Welcome\discretionary {-}{}{}Window}|hyperpage}{24}

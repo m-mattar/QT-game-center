@@ -81,15 +81,16 @@ void MainWindow::fixLabels(){
 
 
 // METHODS
-/*
+/*!
     loads the jokes.json document
     selects a random joke from it
-    returns it as a QString
+    
+    \return QString as a Joke.
 */
 QString MainWindow::getJoke(){
     srand(time(NULL));
-    //const QString filePath = "/home/eece435l/Desktop/435L/project-eece435l-game-center/JSON/jokes.json";
-     const QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/jokes.json";
+    const QString filePath = "/home/eece435l/Desktop/435L/project-eece435l-game-center/JSON/jokes.json";
+    // const QString filePath = "/media/sf_SharedFolder-EECE435L/Project-game-center/game-center/JSON/jokes.json";
 //    QString filePath = "../JSON/jokes.json"; //location of the jokes JSON file
 
     QFile file(filePath);
@@ -103,13 +104,10 @@ QString MainWindow::getJoke(){
     return obj["setup"].toString() + "\n" + obj["punchline"].toString();
 }
 
+/*!
+	Set the Background music.
+*/
 void MainWindow::playMusic(){
-
-    //Play music
-//        QMediaPlayer* music = new QMediaPlayer();
-//        music->setMedia(QUrl("qrc:/sounds/Sounds/music.mp3"));
-//        music->play();
-
     QMediaPlaylist *playlist = new QMediaPlaylist();
     playlist->addMedia(QUrl("qrc:/sounds/Sounds/music.mp3"));
     playlist->setPlaybackMode(QMediaPlaylist::Loop);

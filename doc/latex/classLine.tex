@@ -1,0 +1,54 @@
+\hypertarget{classLine}{\section{Line Class Reference}
+\label{classLine}\index{Line@{Line}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Q\-List$<$ \hyperlink{classPoint}{Point} $>$ \hyperlink{classLine_a91d2b5b17efce31863c4ba2545cc3917}{get\-Changed\-Tiles} ()
+\item 
+Q\-List$<$ \hyperlink{classPoint}{Point} $>$ \hyperlink{classLine_ac7cf1abd6bdabad3ae7589c716920af6}{check\-Line} (\hyperlink{classPoint}{Point} pattern)
+\item 
+\hypertarget{classLine_ad1cf45f33ea7256560fe6ce4fc2d1eb2}{{\bfseries Line} (int disk\-Color, \hyperlink{classPoint}{Point} point, int $\ast$$\ast$board)}\label{classLine_ad1cf45f33ea7256560fe6ce4fc2d1eb2}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classLine_a35580843d14864454cddd16d7806049c}{int {\bfseries disk\-Color}}\label{classLine_a35580843d14864454cddd16d7806049c}
+
+\item 
+\hypertarget{classLine_adaf06f2ff9499915e340b615ecade2a7}{\hyperlink{classPoint}{Point} {\bfseries point}}\label{classLine_adaf06f2ff9499915e340b615ecade2a7}
+
+\item 
+\hypertarget{classLine_ac9918112d0314311e32c819cdc100ebf}{int $\ast$$\ast$ {\bfseries boardgame}}\label{classLine_ac9918112d0314311e32c819cdc100ebf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classLine_ac7cf1abd6bdabad3ae7589c716920af6}{\index{Line@{Line}!check\-Line@{check\-Line}}
+\index{check\-Line@{check\-Line}!Line@{Line}}
+\subsubsection[{check\-Line}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Point} $>$ Line\-::check\-Line (
+\begin{DoxyParamCaption}
+\item[{{\bf Point}}]{pattern}
+\end{DoxyParamCaption}
+)}}\label{classLine_ac7cf1abd6bdabad3ae7589c716920af6}
+A function used by get\-Changed\-Tiles to see whether a line is affected by the point \begin{DoxyReturn}{Returns}
+If it is affected, it returns a list of all points affected. If not, it just returns an empty list 
+\end{DoxyReturn}
+\hypertarget{classLine_a91d2b5b17efce31863c4ba2545cc3917}{\index{Line@{Line}!get\-Changed\-Tiles@{get\-Changed\-Tiles}}
+\index{get\-Changed\-Tiles@{get\-Changed\-Tiles}!Line@{Line}}
+\subsubsection[{get\-Changed\-Tiles}]{\setlength{\rightskip}{0pt plus 5cm}Q\-List$<$ {\bf Point} $>$ Line\-::get\-Changed\-Tiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classLine_a91d2b5b17efce31863c4ba2545cc3917}
+A function that get all the changed tiles that are affected by choosing the point attribute \begin{DoxyReturn}{Returns}
+A list of all changed points on the board 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+game-\/2-\/reversi/line.\-h\item 
+game-\/2-\/reversi/line.\-cpp\end{DoxyCompactItemize}

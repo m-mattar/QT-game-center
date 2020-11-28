@@ -12,7 +12,10 @@ Line::Line(int diskColor, Point point, int** board) {
     }
 }
 
-
+/*!
+	A function that get all the changed tiles that are affected by choosing the point attribute
+	\return A list of all changed points on the board
+*/
 QList<Point> Line::getChangedTiles() {
     boardgame[point.x][point.y] = diskColor;
 
@@ -35,7 +38,10 @@ QList<Point> Line::getChangedTiles() {
     }
 
 }
-
+/*!
+	A function used by getChangedTiles to see whether a line is affected by the point
+	\return If it is affected, it returns a list of all points affected. If not, it just returns an empty list
+*/
 QList<Point> Line::checkLine(Point pattern) {
     bool isChanged = false;
     QList<Point> res;

@@ -4,6 +4,10 @@ Util::Util(QObject *parent) : QObject(parent){
 
 }
 
+/*!
+	Hashes a password using a hashfunction
+	/return Hashed password as int
+*/
 int Util::hashPassword(QString password){
     std::string s = password.toLocal8Bit().constData();
     const size_t InitialFNV = 2166136261U;
@@ -17,6 +21,10 @@ int Util::hashPassword(QString password){
     return hash;
 }
 
+/*!
+	Checks if a password is valid, of size at least 4 and have special chars
+	/return True if valid, false otherwise.
+*/
 bool Util::checkPassword(QString password){
      std::string pw = password.toLocal8Bit().constData();
      bool special = false,
